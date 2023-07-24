@@ -13,7 +13,7 @@ function ProfileButton({ user }) {
   
 
   const openMenu = (e) => {
-    debugger
+    // debugger
     e.stopPropagation()
     if (showMenu) return;
     setShowMenu(true);
@@ -43,7 +43,7 @@ function ProfileButton({ user }) {
   // }
   
   useEffect(() => {
-    debugger
+    // debugger
     if (!showMenu) return;
 
     const closeMenu = () => {

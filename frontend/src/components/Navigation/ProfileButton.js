@@ -77,9 +77,11 @@ return (
           <div onClick={menuClick}>
           <ul className="profile-dropdown">
              
-      
-        <LoginFormModal />
-         <SignupFormModal />
+          <div>
+            <LoginFormModal />
+            <SignupFormModal />
+
+          </div>
        
      
               {/* <li>
@@ -104,7 +106,7 @@ return (
           <div onClick={menuClick}>
           <ul className="profile-dropdown">
              
-          <button onClick={logout}>Log Out</button>
+          <button id="modalBtn" onClick={logout}>Log Out</button>
 
        
      

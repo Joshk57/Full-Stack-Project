@@ -34,16 +34,16 @@ function Navigation(){
   
     <div className='nav'>
       <div id='navbar'>
-              <NavLink exact to="/"><img id="logo" src="https://upload.wikimedia.org/wikipedia/commons/6/69/Airbnb_Logo_B%C3%A9lo.svg"/>Home</NavLink>
+              <NavLink exact to="/"><img id="logo" src="https://upload.wikimedia.org/wikipedia/commons/6/69/Airbnb_Logo_B%C3%A9lo.svg"/></NavLink>
               {/* {sessionLinks} */}
       </div>
 
+
       <ul id="nav-list">
-        <li>
-          <br></br><br></br>
+      <input id='searchbar' type="text" placeholder="Search..."></input>
+          {/* <br></br><br></br> */}
           <ProfileButton />
-          <br></br><br></br>
-        </li>
+          {/* <br></br><br></br> */}
       </ul>
     </div>
   );

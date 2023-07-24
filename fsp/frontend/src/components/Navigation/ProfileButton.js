@@ -8,11 +8,16 @@ function ProfileButton({ user }) {
   const dispatch = useDispatch();
   const [showMenu, setShowMenu] = useState(false);
   const currentUser = useSelector((state) => state.session.user)
+  const [showLoginModal, setShowLoginModal] = useState(false)
   
   const openMenu = () => {
     if (showMenu) return;
     setShowMenu(true);
   };
+
+  const openLoginModal = () => {
+    setShowLoginModal(true)
+  }
   
   useEffect(() => {
     if (!showMenu) return;
@@ -43,9 +48,6 @@ function ProfileButton({ user }) {
         
         {showMenu && (
           <ul className="profile-dropdown">
-            {/* <li>{user.firstName}</li>
-            <li>{user.lastName}</li>
-            <li>{user.email}</li> */}
             <>
             <LoginFormModal />
             <br/>

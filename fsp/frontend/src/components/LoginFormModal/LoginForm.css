@@ -1,0 +1,61 @@
+
+
+.loginForm {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 530px;
+    height: auto;
+    background-color: #fff;
+    padding: 25px;
+    border-radius: 8px;
+    transform: translate(-50%, -50%);
+    margin: 0 auto;
+}
+
+.loginHeader {
+    font-size: 22px;
+    font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif;
+    color: black;
+    font-weight: 600;
+    margin-top: 25px;
+}
+  
+  
+.loginForm label {
+    display: block;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    border-width: 2px;
+    text-indent: 10px;
+    font-size: 14px;
+    font-weight: 600;
+    text-align: left;
+    padding-top: 5px;
+}
+  
+.loginForm input {
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+    margin-bottom: 1px;
+}
+  
+.loginBtn {
+    /* background-color: #f55656; */
+    display: block;
+    width: 100%;
+    color: #fff;
+    text-align: center;
+    border: none;
+    border-radius: 8px;
+    padding: 15px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    /* background-image: radial-gradient(to right, #fc365b, #db1064, #bb1e59); */
+    /* background-image: radial-gradient(to right,#e61e4d 27.5%,#e31c5f 40%,#d70466 57.5%,#bd1e59 75%,#bd1e59 100% );
+    background: radial-gradient(#fd5c63, #bd1e59) */
+    background: radial-gradient(#e31c5f, #bd1e59)
+}
+  

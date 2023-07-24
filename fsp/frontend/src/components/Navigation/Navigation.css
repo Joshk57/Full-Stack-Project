@@ -1,0 +1,27 @@
+#bars {
+    padding: 20px;
+    
+}
+.profileMenu {
+    width: 70px;
+    height: 40px;
+    border-radius: 20px;
+    cursor: pointer;
+    padding: 5px 5px 5px 12px;
+    background: transparent;
+    border: 1px solid;
+    /* text-align: inherit; */
+}
+.profileMenu:hover {
+    box-shadow: 0 0 11px rgba(33,33,33,.2); 
+}
+#profileIcon {
+    color: grey;
+    /* width: 20px; */
+    text-align: right;
+}
+
+#profileBars {
+    color: black;
+
+}

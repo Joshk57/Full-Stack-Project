@@ -31,11 +31,9 @@ function Navigation(){
     //   </li>
     // </ul>
     <div className='nav'>
-        <div id='logo'>
-            <li>
-                <NavLink exact to="/">Home</NavLink>
+        <div id='navbar'>
+                <NavLink exact to="/"><img id="logo" src="https://upload.wikimedia.org/wikipedia/commons/6/69/Airbnb_Logo_B%C3%A9lo.svg"/>Home</NavLink>
                 {sessionLinks}
-            </li>
 
     </div>
   

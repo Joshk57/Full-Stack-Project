@@ -31,33 +31,34 @@ function ProfileButton({ user }) {
     dispatch(sessionActions.logout());
   };
 
-  return (
-    <>
-      {/* <button onClick={openMenu}>
-        <i className="fa-solid fa-user-circle" />
-      </button> */}
-      <button class="profileMenu" onClick={openMenu}>
-        <i id="profileBars" class="fa-solid fa-bars"></i>
-        <i id="profileIcon" class="fa-solid fa-user"></i>
-      </button>
+  if (!currentUser) {
+    return (
+      <>
 
-      
-      {showMenu && (
-        <ul className="profile-dropdown">
-          {/* <li>{user.firstName}</li>
-          <li>{user.lastName}</li>
-          <li>{user.email}</li> */}
-          <>
-          <LoginFormModal />
-          <br/>
-          <SignupFormModal />
-          <br/>
-          <button onClick={logout}>Log Out</button>
-          </>
-        </ul>
-      )}
-    </>
-  );
+        <button className="profileMenu" onClick={openMenu}>
+          <i id="profileBars" className="fa-solid fa-bars"></i>
+          <i id="profileIcon" className="fa-solid fa-user"></i>
+        </button>
+  
+        
+        {showMenu && (
+          <ul className="profile-dropdown">
+            {/* <li>{user.firstName}</li>
+            <li>{user.lastName}</li>
+            <li>{user.email}</li> */}
+            <>
+            <LoginFormModal />
+            <br/>
+            <SignupFormModal />
+            <br/>
+            <button onClick={logout}>Log Out</button>
+            </>
+          </ul>
+        )}
+      </>
+    );
+
+  }
 }
 
 export default ProfileButton;

@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Redirect } from "react-router-dom";
+// import { Redirect } from "react-router-dom";
 import * as sessionActions from "../../store/session";
 import './SignupForm.css';
 
 function SignupForm() {
   const dispatch = useDispatch();
-  const sessionUser = useSelector(state => state.session.user);
+  // const sessionUser = useSelector(state => state.session.user);
   const [email, setEmail] = useState("");
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("")
@@ -18,7 +18,7 @@ function SignupForm() {
     e.preventDefault();
     if (password === confirmPassword) {
       setErrors([]);
-      return dispatch(sessionActions.signup({ firstName, lastName, email, password }))
+      return dispatch(sessionActions.signup({ firstName: firstName, lastName: lastName, email, password }))
         .catch(async (res) => {
         let data;
         try {
@@ -36,9 +36,9 @@ function SignupForm() {
   };
 
   return (
-    <div class="signupForm">
+    <div className="signupForm">
       <form onSubmit={handleSubmit}>
-        <div class="signupHeader">
+        <div className="signupHeader">
           <h3>Welcome to Air Bnb</h3>
         </div>
         <ul>

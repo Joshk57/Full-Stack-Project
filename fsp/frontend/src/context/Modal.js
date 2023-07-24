@@ -11,7 +11,7 @@ export function ModalProvider({ children }) {
   useEffect(() => {
     setValue(modalRef.current);
   }, [])
-
+// debugger
   return (
     <>
       <ModalContext.Provider value={value}>

@@ -7,7 +7,7 @@ import './Navigation.css';
 import SignupFormModal from '../SignupFormModal';
 
 function Navigation(){
-  const sessionUser = useSelector(state => state.session.user);
+  // const sessionUser = useSelector(state => state.session.user);
 
   // let sessionLinks;
   // if (sessionUser) {
@@ -24,6 +24,7 @@ function Navigation(){
   // }
 
   return (
+
     // <ul>
     //   <li>
     //     <NavLink exact to="/">Home</NavLink>

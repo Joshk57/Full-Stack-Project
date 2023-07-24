@@ -4,7 +4,7 @@ import LoginForm from './LoginForm';
 
 function LoginFormModal() {
   const [showModal, setShowModal] = useState(false);
-
+  // debugger
   return (
     <>
       <button onClick={() => setShowModal(true)}>Log In</button>
@@ -12,6 +12,7 @@ function LoginFormModal() {
         <Modal onClose={() => setShowModal(false)}>
           <LoginForm />
         </Modal>
+        // <h1>Hello</h1>
       )}
     </>
   );

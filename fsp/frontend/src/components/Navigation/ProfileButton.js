@@ -97,6 +97,31 @@ return (
       </>
     )}
 
+    {currentUser && (
+      <>
+
+        {showMenu && (
+          <div onClick={menuClick}>
+          <ul className="profile-dropdown">
+             
+          <button onClick={logout}>Log Out</button>
+
+       
+     
+              {/* <li>
+                <button onClick={openLoginModal}>Login</button>
+              </li>
+              <li>
+                <button onClick={openSignupModal}>Sign Up</button>
+              </li>
+              <li>
+                <button onClick={logout}>Log Out</button>
+              </li> */}
+          </ul>
+          </div>
+        )}
+      </>
+    )}
     {/* {showLoginModal && (
       <div className="modal">
         <div className="modal-content">

@@ -20,6 +20,7 @@ function LoginForm() {
   const handleSubmit = (e) => {
     e.preventDefault();
     setErrors([]);
+    
     return dispatch(sessionActions.login({ email, password }))
       .catch(async (res) => {
         let data;

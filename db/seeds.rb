@@ -18,9 +18,9 @@ ApplicationRecord.transaction do
     puts "Creating users..."
     # Create one user with an easy to remember username, email, and password:
     User.create!(
-      first_name: 'Josh', 
-      last_name: 'Kim',
-      email: 'josh@gmail.com', 
+      first_name: 'Demo', 
+      last_name: 'User',
+      email: 'demo@gmail.com', 
       password: 'password'
     )
   

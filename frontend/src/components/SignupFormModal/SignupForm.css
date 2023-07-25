@@ -11,16 +11,22 @@
     border-radius: 8px;
     transform: translate(-50%, -50%);
     margin: 0 auto;
+    font-family: 'Manrope', sans-serif;
+
 }
 
 .signupHeader {
     font-size: 22px;
-    font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif;
+    font-family: 'Manrope', sans-serif;
     color: black;
     font-weight: 600;
     margin-top: 25px;
 }
-  
+.signupHeader h2 {
+    text-align: center;
+    margin-top: -15px;
+    font-size: 22px;
+}
   
 .signupForm label {
     display: block;
@@ -35,11 +41,21 @@
 }
   
 .signupForm input {
+    width: 506px;
+    padding: 10px;
+    font-size: 14px;
+    margin-bottom: 1px;
+    border: transparent;
+}
+
+
+/* .signupForm input[type="text"],
+.signupForm input[type="password"] {
     width: 100%;
     padding: 10px;
     font-size: 14px;
     margin-bottom: 1px;
-}
+} */
   
 .signupBtn {
     /* background-color: #f55656; */
@@ -59,3 +75,16 @@
     background: radial-gradient(#e31c5f, #bd1e59)
 }
   
+.close {
+    color: #aaaaaa;
+    float: left;
+    margin-top: -5px;
+    font-size: 28px;
+    font-weight: bold;
+  }
+
+  .close:hover, .close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+  }

@@ -22,10 +22,9 @@ function SignupForm() {
         .catch(async (res) => {
         let data;
         try {
-          // .clone() essentially allows you to read the response body twice
           data = await res.clone().json();
         } catch {
-          data = await res.text(); // Will hit this case if the server is down
+          data = await res.text();
         }
         if (data?.errors) setErrors(data.errors);
         else if (data) setErrors([data]);
@@ -39,6 +38,9 @@ function SignupForm() {
     <div className="signupForm">
       <form onSubmit={handleSubmit}>
         <div className="signupHeader">
+        <span class="close">&times;</span>
+        <h2>Sign Up</h2>
+        <hr/>
           <h3>Welcome to Air Bnb</h3>
         </div>
         <ul>
@@ -101,5 +103,6 @@ function SignupForm() {
     
   );
 }
+
 
 export default SignupForm;

@@ -19,36 +19,14 @@ function ProfileButton({ user }) {
     setShowMenu(true);
   };
 
-  // const openMenu = (e) => {
-  //   e.stopPropagation()
-  //   setShowMenu(true)
-  // }
 
-  // const closeMenu = () => {
-  //   setShowMenu(false)
-  // }
-  // const openLoginModal = () => {
-  //   setShowLoginModal(true)
-  // }
-  // const closeLoginModal = () => {
-  //   setShowLoginModal(false)
-  // }
-
-  // const openSignupModal = () => {
-  //   setShowSignupModal(true)
-  // }
-
-  // const closeSignupModal = () => {
-  //   setShowSignupModal(false)
-  // }
-  
   useEffect(() => {
     // debugger
     if (!showMenu) return;
-
     const closeMenu = () => {
       setShowMenu(false);
     };
+
 
     document.addEventListener('click', closeMenu);
   
@@ -67,8 +45,15 @@ function ProfileButton({ user }) {
 return (
   <>
         <button className="profileMenu" onClick={openMenu}>
-          <i id="profileBars" className="fa-solid fa-bars"></i>
-          <i id="profileIcon" className="fa-solid fa-user"></i>
+          <div className="profileContainer">
+            <div className="profileIcon">
+            <i id="profileBars" className="fa-solid fa-bars"></i>
+            <i id="userIcon" className="fa-solid fa-user"></i>
+
+            </div>
+              
+
+          </div>
         </button>
     {!currentUser && (
       <>
@@ -80,6 +65,7 @@ return (
           <div>
             <LoginFormModal />
             <SignupFormModal />
+    
 
           </div>
        

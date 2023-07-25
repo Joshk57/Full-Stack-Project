@@ -22,3 +22,9 @@
     position: absolute;
     background-color:white;
   }
+
+  #modalBtn {
+    font-family: 'Manrope', sans-serif;
+    font-weight: 500;
+    
+  }

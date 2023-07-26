@@ -28,6 +28,7 @@ class User < ApplicationRecord
         class_name: :Listing,
         dependent: :destroy
 
+    has_one_attached :image
     
     def self.find_by_credentials(email, password)
         # field = credential =~ URI::MailTo::EMAIL_REGEXP ? :email : :username

@@ -43,8 +43,8 @@ export const getListings = (state) => {
 }
 
 export const fetchListing = (listingId) => async dispatch => {
-    const response = await csrfFetch(`api/listings/${listingId}`)
-
+    const response = await csrfFetch(`/api/listings/${listingId}`)
+    // debugger
     if (response.ok) {
         const listing = await response.json()
         dispatch(receiveListing(listing))
@@ -97,6 +97,7 @@ const listingsReducer = (state = {}, action) => {
     let newState = {...state}
     switch (action.type) {
         case RECEIVE_LISTING:
+            debugger
             return {...newState, [action.listing.id]: action.listing}
         case RECEIVE_LISTINGS:
             return {...action.listings}

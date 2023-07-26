@@ -2,7 +2,7 @@ import { useDispatch, useSelector } from "react-redux"
 import { getListings, fetchListings } from "../../store/listings"
 import { useEffect } from "react"
 import ListingIndexItem from "./ListingIndexItem"
-
+import "./ListingIndex.css"
 
 
 const ListingIndex = () => {
@@ -14,7 +14,7 @@ const ListingIndex = () => {
     }, [dispatch])
 
     return (
-        <div>
+        <div className="listings-index">
             {
                 listings.map(listing => <ListingIndexItem listing={listing} key={listing.id}/>)
             }

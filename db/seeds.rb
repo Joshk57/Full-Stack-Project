@@ -40,61 +40,241 @@ ApplicationRecord.transaction do
     Listing1 = Listing.create!(
       host_id: 1, 
       name: "Cheap Place", 
-      description: "Good cheap place in Brooklyn", 
+      description: "Good cheap place in Brooklyn. Good cheap place in Brooklyn.
+      Good cheap place in Brooklyn.Good cheap place in Brooklyn.Good cheap place in Brooklyn.
+      Good cheap place in Brooklyn. Good cheap place in Brooklyn.Good cheap place in Brooklyn.Good cheap place in Brooklyn.
+      Good cheap place in Brooklyn.Good cheap place in Brooklyn. Good cheap place in Brooklyn.", 
       address: "7 ST", 
       city: "Brooklyn", 
       state: "New York", 
+      max_guests: 3,
       num_bedrooms: 4, 
+      num_beds: 4,
       num_bathrooms: 2, 
-      price: 1
+      wifi: true, 
+      kitchen: true, 
+      tv: true, 
+      pets_allowed: false, 
+      free_parking: true, 
+      air_conditioning: true, 
+      pool: false,
+      price: 1,
+      image: "https://a0.muscache.com/im/pictures/miso/Hosting-578897320179146437/original/05928ce6-01ff-4829-bcde-9670e2a03c22.jpeg?im_w=720"
       )
 
     Listing2 = Listing.create!(
       host_id: 2, 
       name: "Expensive Place", 
-      description: "Very clean place", 
+      description: "Very clean place.Very clean place.Very clean place.Very clean place.Very clean place.
+      Very clean place.Very clean place.Very clean place.Very clean place.Very clean place.
+      Very clean place.Very clean place.Very clean place.Very clean place.Very clean place.
+      Very clean place.Very clean place.Very clean place.Very clean place.Very clean place.", 
       address: "12 ST", 
       city: "Queens", 
       state: "New York", 
-      num_bedrooms: 2, 
+      max_guests: 4,
+      num_bedrooms: 2,
+      num_beds: 3, 
       num_bathrooms: 2, 
-      price: 3
+      wifi: true, 
+      kitchen: true, 
+      tv: true, 
+      pets_allowed: true, 
+      free_parking: true, 
+      air_conditioning: true, 
+      pool: false,
+      price: 3,
+      image: "https://a0.muscache.com/im/pictures/miso/Hosting-878958470158600275/original/2d7beb5b-5a37-46c9-90cb-c5b004a62a6e.jpeg?im_w=720"
       )
 
       Listing3 = Listing.create!(
       host_id: 3, 
       name: "Beach House", 
-      description: "Nice place near beach", 
+      description: "Nice place near beach.Nice place near beachNice place near beachNice place near beachNice place near beachNice place near beach
+      Nice place near beach.Nice place near beachNice place near beachNice place near beachNice place near beach", 
       address: "122 ST", 
       city: "Miami", 
       state: "Florida", 
+      max_guests: 5,
       num_bedrooms: 2, 
+      num_beds: 4,
       num_bathrooms: 2, 
-      price: 10
+      wifi: true, 
+      kitchen: true, 
+      tv: true, 
+      pets_allowed: false, 
+      free_parking: false, 
+      air_conditioning: true, 
+      pool: true,
+      price: 10,
+      image: "https://a0.muscache.com/im/pictures/miso/Hosting-46695796/original/a0965aa5-3907-466e-b727-0900e2a7e8c7.jpeg?im_w=720"
       )
 
       Listing4 = Listing.create!(
       host_id: 2, 
       name: "Good house", 
-      description: "Good place", 
+      description: "Good place.Good place.Good place.Good place.Good place.Good place.Good place.Good place.
+      Good place.Good place.Good place.Good place.Good place.Good place.Good place.Good place.Good place.Good place.Good place.Good place.Good place.Good place.Good place.Good place.", 
       address: "120 ST", 
       city: "Brooklyn", 
       state: "New York", 
+      max_guests: 2,
       num_bedrooms: 2, 
+      num_beds: 2,
       num_bathrooms: 1, 
-      price: 3
+      wifi: true, 
+      kitchen: true, 
+      tv: false, 
+      pets_allowed: false, 
+      free_parking: true, 
+      air_conditioning: true, 
+      pool: false,
+      price: 3,
+      image: "https://a0.muscache.com/im/pictures/d02b6794-2024-491f-a2e3-d8b56e3ef5a4.jpg?im_w=720"
       )
 
       Listing5 = Listing.create!(
       host_id: 4, 
       name: "Luxurious Villa", 
-      description: "Enjoy your vacation here", 
+      description: "Enjoy your vacation here. Enjoy your vacation here.Enjoy your vacation here.Enjoy your vacation here.Enjoy your vacation here.Enjoy your vacation here.
+      Enjoy your vacation here.Enjoy your vacation here.Enjoy your vacation here.Enjoy your vacation here.
+      Enjoy your vacation here.Enjoy your vacation here.Enjoy your vacation here.Enjoy your vacation here.", 
       address: "1 ST", 
       city: "Los Angeles", 
       state: "California",
+      max_guests: 3,
       num_bedrooms: 4, 
+      num_beds: 4,
       num_bathrooms: 3, 
-      price: 30
+      wifi: true, 
+      kitchen: true, 
+      tv: false, 
+      pets_allowed: false, 
+      free_parking: true, 
+      air_conditioning: true, 
+      pool: true,
+      price: 30,
+      image: "https://a0.muscache.com/im/pictures/miso/Hosting-671622319399090627/original/37e0ed75-118f-402e-95c7-2c62512acdd5.jpeg?im_w=720"
       )
-    
+
+      Listing6 = Listing.create!(
+        host_id: 1, 
+        name: "Cheap Place", 
+        description: "Good cheap place in Brooklyn. Good cheap place in Brooklyn.
+        Good cheap place in Brooklyn.Good cheap place in Brooklyn.Good cheap place in Brooklyn.
+        Good cheap place in Brooklyn. Good cheap place in Brooklyn.Good cheap place in Brooklyn.Good cheap place in Brooklyn.
+        Good cheap place in Brooklyn.Good cheap place in Brooklyn. Good cheap place in Brooklyn.", 
+        address: "7 ave", 
+        city: "Bronx", 
+        state: "New York", 
+        max_guests: 3,
+        num_bedrooms: 4, 
+        num_beds: 4,
+        num_bathrooms: 2, 
+        wifi: true, 
+        kitchen: true, 
+        tv: false, 
+        pets_allowed: false, 
+        free_parking: true, 
+        air_conditioning: true, 
+        pool: false,
+        price: 1,
+        image: "https://a0.muscache.com/im/pictures/miso/Hosting-810871681374370809/original/661a54cb-cb27-4f76-994a-3e731925b736.jpeg?im_w=720"
+        )
+  
+      Listing7 = Listing.create!(
+        host_id: 2, 
+        name: "Expensive Place", 
+        description: "Very clean place.Very clean place.Very clean place.Very clean place.Very clean place.
+        Very clean place.Very clean place.Very clean place.Very clean place.Very clean place.
+        Very clean place.Very clean place.Very clean place.Very clean place.Very clean place.
+        Very clean place.Very clean place.Very clean place.Very clean place.Very clean place.", 
+        address: "12 AVE", 
+        city: "Queens", 
+        state: "New York", 
+        max_guests: 4,
+        num_bedrooms: 2,
+        num_beds: 3, 
+        num_bathrooms: 2,
+        wifi: true, 
+        kitchen: true, 
+        tv: false, 
+        pets_allowed: false, 
+        free_parking: true, 
+        air_conditioning: true, 
+        pool: false,
+        price: 3,
+        image: "https://a0.muscache.com/im/pictures/71fe4b18-f879-48e4-b2c3-352ebd962259.jpg?im_w=720"
+        )
+  
+        Listing8 = Listing.create!(
+        host_id: 3, 
+        name: "Beach House", 
+        description: "Nice place near beach.Nice place near beachNice place near beachNice place near beachNice place near beachNice place near beach
+        Nice place near beach.Nice place near beachNice place near beachNice place near beachNice place near beach", 
+        address: "1212 ST", 
+        city: "Orlando", 
+        state: "Florida", 
+        max_guests: 5,
+        num_bedrooms: 2, 
+        num_beds: 4,
+        num_bathrooms: 2, 
+        wifi: true, 
+        kitchen: true, 
+        tv: false, 
+        pets_allowed: false, 
+        free_parking: true, 
+        air_conditioning: true, 
+        pool: false,
+        price: 10,
+        image: "https://a0.muscache.com/im/pictures/9faf7623-c2cb-4e11-be5d-aeb3f4f53935.jpg?im_w=720"
+        )
+  
+        Listing9 = Listing.create!(
+        host_id: 2, 
+        name: "Good house", 
+        description: "Good place.Good place.Good place.Good place.Good place.Good place.Good place.Good place.
+        Good place.Good place.Good place.Good place.Good place.Good place.Good place.Good place.Good place.Good place.Good place.Good place.Good place.Good place.Good place.Good place.", 
+        address: "1220 ST", 
+        city: "Staten Island", 
+        state: "New York", 
+        max_guests: 2,
+        num_bedrooms: 2, 
+        num_beds: 2,
+        num_bathrooms: 1, 
+        wifi: true, 
+        kitchen: true, 
+        tv: false, 
+        pets_allowed: false, 
+        free_parking: true, 
+        air_conditioning: true, 
+        pool: false,
+        price: 3,
+        image: "https://a0.muscache.com/im/pictures/miso/Hosting-874099112129683789/original/6a59e77c-43bf-4b68-9730-cfbc7a168179.jpeg?im_w=720"
+        )
+  
+        Listing10 = Listing.create!(
+        host_id: 4, 
+        name: "Luxurious Villa", 
+        description: "Enjoy your vacation here. Enjoy your vacation here.Enjoy your vacation here.Enjoy your vacation here.Enjoy your vacation here.Enjoy your vacation here.
+        Enjoy your vacation here.Enjoy your vacation here.Enjoy your vacation here.Enjoy your vacation here.
+        Enjoy your vacation here.Enjoy your vacation here.Enjoy your vacation here.Enjoy your vacation here.", 
+        address: "12222 ST", 
+        city: "Los Angeles", 
+        state: "California",
+        max_guests: 3,
+        num_bedrooms: 4, 
+        num_beds: 4,
+        num_bathrooms: 3, 
+        wifi: true, 
+        kitchen: true, 
+        tv: false, 
+        pets_allowed: false, 
+        free_parking: true, 
+        air_conditioning: true, 
+        pool: false,
+        price: 30,
+        image: "https://a0.muscache.com/im/pictures/aabc73e7-d2ec-4a3e-8cd2-5261fad11fc0.jpg?im_w=720"
+        )
+      
   end

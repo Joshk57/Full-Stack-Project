@@ -40,7 +40,7 @@ function LoginForm() {
     <div className="loginForm">
       <form onSubmit={handleSubmit}>
         <div className="loginHeader">
-          <span class="close">&times;</span>
+          <span className="close">&times;</span>
           <h2>Log In</h2>
           <hr/>
           <h3>Welcome to Air Bnb</h3>

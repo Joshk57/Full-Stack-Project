@@ -38,7 +38,7 @@ function SignupForm() {
     <div className="signupForm">
       <form onSubmit={handleSubmit}>
         <div className="signupHeader">
-        <span class="close">&times;</span>
+        <span className="close">&times;</span>
         <h2>Sign Up</h2>
         <hr/>
           <h3>Welcome to Air Bnb</h3>

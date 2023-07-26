@@ -35,4 +35,66 @@ ApplicationRecord.transaction do
     end
   
     puts "Done!"
+
+
+    Listing1 = Listing.create!(
+      host_id: 1, 
+      name: "Cheap Place", 
+      description: "Good cheap place in Brooklyn", 
+      address: "7 ST", 
+      city: "Brooklyn", 
+      state: "New York", 
+      num_bedrooms: 4, 
+      num_bathrooms: 2, 
+      price: 1
+      )
+
+    Listing2 = Listing.create!(
+      host_id: 2, 
+      name: "Expensive Place", 
+      description: "Very clean place", 
+      address: "12 ST", 
+      city: "Queens", 
+      state: "New York", 
+      num_bedrooms: 2, 
+      num_bathrooms: 2, 
+      price: 3
+      )
+
+      Listing3 = Listing.create!(
+      host_id: 3, 
+      name: "Beach House", 
+      description: "Nice place near beach", 
+      address: "122 ST", 
+      city: "Miami", 
+      state: "Florida", 
+      num_bedrooms: 2, 
+      num_bathrooms: 2, 
+      price: 10
+      )
+
+      Listing4 = Listing.create!(
+      host_id: 2, 
+      name: "Good house", 
+      description: "Good place", 
+      address: "120 ST", 
+      city: "Brooklyn", 
+      state: "New York", 
+      num_bedrooms: 2, 
+      num_bathrooms: 1, 
+      price: 3
+      )
+
+      Listing5 = Listing.create!(
+      host_id: 4, 
+      name: "Luxurious Villa", 
+      description: "Enjoy your vacation here", 
+      address: "1 ST", 
+      city: "Los Angeles", 
+      state: "California",
+      num_bedrooms: 4, 
+      num_bathrooms: 3, 
+      price: 30
+      )
+    
   end

@@ -29,6 +29,12 @@ class Listing < ApplicationRecord
         foreign_key: :host_id,
         class_name: :User
 
+    has_many :listing_amenities
+
+    has_many :amenities,
+        through: :listing_amenities
+
+
     # has_one_attached :image
     has_many_attached :images
 end

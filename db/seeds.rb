@@ -35,9 +35,16 @@ ApplicationRecord.transaction do
     end
   
     puts "Done!"
+    wifi = Amenity.create(name: "Wifi")
+    kitchen = Amenity.create(name: "Kitchen")
+    tv = Amenity.create(name: "TV")
+    pets_allowed = Amenity.create(name: "Pets Allowed")
+    free_parking = Amenity.create(name: "Free Parking")
+    air_conditioning = Amenity.create(name: "Air Conditioning")
+    pool = Amenity.create(name: "Pool")
 
-
-    Listing1 = Listing.create!(
+    
+    listing1 = Listing.create!(
       host_id: 1, 
       name: "Cheap Place", 
       description: "Good cheap place in Brooklyn. Good cheap place in Brooklyn.
@@ -61,6 +68,8 @@ ApplicationRecord.transaction do
       price: 1,
       image: "https://a0.muscache.com/im/pictures/miso/Hosting-578897320179146437/original/05928ce6-01ff-4829-bcde-9670e2a03c22.jpeg?im_w=720"
       )
+      
+     
 
     Listing2 = Listing.create!(
       host_id: 2, 

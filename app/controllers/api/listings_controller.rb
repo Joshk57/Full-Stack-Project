@@ -1,8 +1,8 @@
 class Api::ListingsController < ApplicationController
 
     def index
-        @listings = Listing.all
-
+        @listings = Listing.all.includes(:amenities)
+        
         render :index
     end
 
@@ -12,7 +12,8 @@ class Api::ListingsController < ApplicationController
         if @listing
             render :show
         else
-            render json: { errors: @listing.errors.full_messages }, status: :unprocessable_entity
+            redirect_to "/"
+        #     render json: { errors: @listing.errors.full_messages }, status: :unprocessable_entity
         end
     end
 

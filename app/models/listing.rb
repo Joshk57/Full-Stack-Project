@@ -2,19 +2,28 @@
 #
 # Table name: listings
 #
-#  id            :bigint           not null, primary key
-#  title         :string           not null
-#  host_id       :bigint           not null
-#  name          :string           not null
-#  description   :text             not null
-#  address       :string           not null
-#  city          :string           not null
-#  state         :string           not null
-#  num_bedrooms  :integer          not null
-#  num_bathrooms :integer          not null
-#  price         :float            not null
-#  created_at    :datetime         not null
-#  updated_at    :datetime         not null
+#  id               :bigint           not null, primary key
+#  host_id          :bigint           not null
+#  name             :string           not null
+#  description      :text             not null
+#  city             :string           not null
+#  state            :string           not null
+#  num_bedrooms     :integer          not null
+#  num_bathrooms    :integer          not null
+#  price            :float            not null
+#  created_at       :datetime         not null
+#  updated_at       :datetime         not null
+#  address          :string           not null
+#  max_guests       :integer          default(1), not null
+#  num_beds         :integer          default(1), not null
+#  image            :string
+#  wifi             :boolean          default(FALSE), not null
+#  kitchen          :boolean          default(FALSE), not null
+#  tv               :boolean          default(FALSE), not null
+#  pets_allowed     :boolean          default(FALSE), not null
+#  free_parking     :boolean          default(FALSE), not null
+#  air_conditioning :boolean          default(FALSE), not null
+#  pool             :boolean          default(FALSE), not null
 #
 class Listing < ApplicationRecord
     validates :name, :description, presence: true

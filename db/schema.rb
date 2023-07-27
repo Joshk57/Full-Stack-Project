@@ -47,8 +47,13 @@ ActiveRecord::Schema[7.0].define(version: 2023_07_27_085547) do
   end
 
   create_table "listing_amenities", force: :cascade do |t|
+    t.bigint "listing_id"
+    t.bigint "amenity_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["amenity_id", "listing_id"], name: "index_listing_amenities_on_amenity_id_and_listing_id", unique: true
+    t.index ["amenity_id"], name: "index_listing_amenities_on_amenity_id"
+    t.index ["listing_id"], name: "index_listing_amenities_on_listing_id"
   end
 
   create_table "listings", force: :cascade do |t|

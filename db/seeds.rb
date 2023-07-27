@@ -35,15 +35,15 @@ ApplicationRecord.transaction do
     end
   
     puts "Done!"
-    wifi = Amenity.create(name: "Wifi")
-    kitchen = Amenity.create(name: "Kitchen")
-    tv = Amenity.create(name: "TV")
-    pets_allowed = Amenity.create(name: "Pets Allowed")
-    free_parking = Amenity.create(name: "Free Parking")
-    air_conditioning = Amenity.create(name: "Air Conditioning")
-    pool = Amenity.create(name: "Pool")
+    wifi = Amenity.create(name: "wifi")
+    kitchen = Amenity.create(name: "kitchen")
+    tv = Amenity.create(name: "tv")
+    pets_allowed = Amenity.create(name: "pets_allowed")
+    free_parking = Amenity.create(name: "free_parking")
+    air_conditioning = Amenity.create(name: "air_conditioning")
+    pool = Amenity.create(name: "pool")
 
-    
+   
     listing1 = Listing.create!(
       host_id: 1, 
       name: "Cheap Place", 
@@ -71,7 +71,7 @@ ApplicationRecord.transaction do
       
      
 
-    Listing2 = Listing.create!(
+    listing2 = Listing.create!(
       host_id: 2, 
       name: "Expensive Place", 
       description: "Very clean place.Very clean place.Very clean place.Very clean place.Very clean place.
@@ -96,7 +96,7 @@ ApplicationRecord.transaction do
       image: "https://a0.muscache.com/im/pictures/miso/Hosting-878958470158600275/original/2d7beb5b-5a37-46c9-90cb-c5b004a62a6e.jpeg?im_w=720"
       )
 
-      Listing3 = Listing.create!(
+      listing3 = Listing.create!(
       host_id: 3, 
       name: "Beach House", 
       description: "Nice place near beach.Nice place near beachNice place near beachNice place near beachNice place near beachNice place near beach
@@ -119,7 +119,7 @@ ApplicationRecord.transaction do
       image: "https://a0.muscache.com/im/pictures/miso/Hosting-46695796/original/a0965aa5-3907-466e-b727-0900e2a7e8c7.jpeg?im_w=720"
       )
 
-      Listing4 = Listing.create!(
+      listing4 = Listing.create!(
       host_id: 2, 
       name: "Good house", 
       description: "Good place.Good place.Good place.Good place.Good place.Good place.Good place.Good place.
@@ -142,7 +142,7 @@ ApplicationRecord.transaction do
       image: "https://a0.muscache.com/im/pictures/d02b6794-2024-491f-a2e3-d8b56e3ef5a4.jpg?im_w=720"
       )
 
-      Listing5 = Listing.create!(
+      listing5 = Listing.create!(
       host_id: 4, 
       name: "Luxurious Villa", 
       description: "Enjoy your vacation here. Enjoy your vacation here.Enjoy your vacation here.Enjoy your vacation here.Enjoy your vacation here.Enjoy your vacation here.
@@ -166,7 +166,7 @@ ApplicationRecord.transaction do
       image: "https://a0.muscache.com/im/pictures/miso/Hosting-671622319399090627/original/37e0ed75-118f-402e-95c7-2c62512acdd5.jpeg?im_w=720"
       )
 
-      Listing6 = Listing.create!(
+      listing6 = Listing.create!(
         host_id: 1, 
         name: "Cheap Place", 
         description: "Good cheap place in Brooklyn. Good cheap place in Brooklyn.
@@ -191,7 +191,7 @@ ApplicationRecord.transaction do
         image: "https://a0.muscache.com/im/pictures/miso/Hosting-810871681374370809/original/661a54cb-cb27-4f76-994a-3e731925b736.jpeg?im_w=720"
         )
   
-      Listing7 = Listing.create!(
+      listing7 = Listing.create!(
         host_id: 2, 
         name: "Expensive Place", 
         description: "Very clean place.Very clean place.Very clean place.Very clean place.Very clean place.
@@ -216,7 +216,7 @@ ApplicationRecord.transaction do
         image: "https://a0.muscache.com/im/pictures/71fe4b18-f879-48e4-b2c3-352ebd962259.jpg?im_w=720"
         )
   
-        Listing8 = Listing.create!(
+        listing8 = Listing.create!(
         host_id: 3, 
         name: "Beach House", 
         description: "Nice place near beach.Nice place near beachNice place near beachNice place near beachNice place near beachNice place near beach
@@ -239,7 +239,7 @@ ApplicationRecord.transaction do
         image: "https://a0.muscache.com/im/pictures/9faf7623-c2cb-4e11-be5d-aeb3f4f53935.jpg?im_w=720"
         )
   
-        Listing9 = Listing.create!(
+        listing9 = Listing.create!(
         host_id: 2, 
         name: "Good house", 
         description: "Good place.Good place.Good place.Good place.Good place.Good place.Good place.Good place.
@@ -262,7 +262,7 @@ ApplicationRecord.transaction do
         image: "https://a0.muscache.com/im/pictures/miso/Hosting-874099112129683789/original/6a59e77c-43bf-4b68-9730-cfbc7a168179.jpeg?im_w=720"
         )
   
-        Listing10 = Listing.create!(
+        listing10 = Listing.create!(
         host_id: 4, 
         name: "Luxurious Villa", 
         description: "Enjoy your vacation here. Enjoy your vacation here.Enjoy your vacation here.Enjoy your vacation here.Enjoy your vacation here.Enjoy your vacation here.
@@ -285,5 +285,16 @@ ApplicationRecord.transaction do
         price: 30,
         image: "https://a0.muscache.com/im/pictures/aabc73e7-d2ec-4a3e-8cd2-5261fad11fc0.jpg?im_w=720"
         )
-      
+        la1_1 = ListingAmenity.create(listing_id: listing1.id, amenity_id: wifi.id)
+        la1_2 = ListingAmenity.create(listing_id: listing1.id, amenity_id: kitchen.id)
+        la1_3 = ListingAmenity.create(listing_id: listing1.id, amenity_id: pool.id)
+        la1_4 = ListingAmenity.create(listing_id: listing1.id, amenity_id: air_conditioning.id)
+        la1_5 = ListingAmenity.create(listing_id: listing1.id, amenity_id: tv.id)
+        la1_6 = ListingAmenity.create(listing_id: listing1.id, amenity_id: free_parking.id)
+        la1_7 = ListingAmenity.create(listing_id: listing1.id, amenity_id: pets_allowed.id)
+        la1_8 = ListingAmenity.create(listing_id: listing1.id, amenity_id: pool.id)
+        la2 = ListingAmenity.create(listing_id: listing2.id, amenity_id: pool.id)
+        la3 = ListingAmenity.create(listing_id: listing3.id, amenity_id: wifi.id)
+        la4 = ListingAmenity.create(listing_id: listing4.id, amenity_id: tv.id)
+
   end

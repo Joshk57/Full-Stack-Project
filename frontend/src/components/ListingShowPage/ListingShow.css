@@ -5,7 +5,7 @@
     padding-left: 270px;
     align-self: center;
     font-family: 'Manrope', sans-serif;
-    max-width: 1120px;
+    max-width: 1420px;
     justify-self: center;
   }
 
@@ -13,13 +13,14 @@
     font-family: 'Manrope', sans-serif;
     font-weight: 400px;
     font-size: 15px;
-    margin-left: 30px;
+    
 }
 
 .listing-heading-container p {
     font-size: 15px;
     margin-top: 0px;
     margin-bottom: 0px;
+    font-weight: 400;
 
 }
 
@@ -28,13 +29,20 @@
     margin-bottom: 10px;
 }
 
-.listing-hosted-by {
+.listing-hosted-by p {
     font-size: 25px;    
+    font-weight: 400;
+    margin-bottom: 0px;
+    font-weight: 400;
+}
+.listing-description {
+    margin-top: 6px;
 }
 
 .listing-details {
     border-bottom: 2px solid;
     border-color: rgb(202, 202, 202);
+    padding-bottom: 5px;
 }
 
 
@@ -53,6 +61,7 @@
     /* margin: 0 auto; */
     /* padding: 20px; */
     border-radius: 20px;
+    padding-top: 24px;
 }
 
 .main-picture {
@@ -120,10 +129,12 @@
 .listing-body-container {
     display: flex;
     flex-direction: row;
-    width: 680px;
+    width: 1400px;
     gap: 50px;
 }
-
+.listing-body {
+    width: 650px;
+}
 .listing-description {
     /* border-top: ; */
     border-bottom: 2px solid;
@@ -133,4 +144,53 @@
 .amenities {
     font-weight: 200;
     font-family: 'Manrope', sans-serif;
+    height: 100px;
 }
+.amenities h3{
+    font-size: 20px;
+    margin-bottom: -20px;
+    margin-left: 0px;
+}
+.amenities-container {
+    /* display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    position: relative;
+    max-width: 300px;
+    padding: 48px 0; */
+
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 16px;
+    grid-auto-flow: row;
+    border-bottom: 2px solid;
+    border-color: rgb(202, 202, 202);
+    padding: 48px;
+    padding-left: 0px;
+    
+}
+
+.amenity-icon {
+    display: flex;
+    /* padding-right: 50px; */
+
+}
+
+.amenity-name {
+    padding-left: 10px;
+    font-weight: 400;
+    font-size: 16px;
+}
+
+
+.calendar-container {
+    display: flex;
+    position: inherit;
+    flex-direction: column;
+    border: 1px solid;
+    border-radius: 12px;
+    padding: 24px;
+    width: 300px;
+    height: 423px;
+}
+

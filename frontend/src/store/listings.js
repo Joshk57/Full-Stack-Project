@@ -97,7 +97,6 @@ const listingsReducer = (state = {}, action) => {
     let newState = {...state}
     switch (action.type) {
         case RECEIVE_LISTING:
-            debugger
             return {...newState, [action.listing.id]: action.listing}
         case RECEIVE_LISTINGS:
             return {...action.listings}

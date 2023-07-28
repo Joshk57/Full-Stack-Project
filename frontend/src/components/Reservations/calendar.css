@@ -37,8 +37,11 @@ cursor: pointer;
 
 
 .DateRangePickerInput {
-border-radius: 12px;
+/* border-radius: 12px; */
+border-top-left-radius: 12px;
+border-top-right-radius: 12px;
 height: 55px;
+width: 318px;
 }
 
 
@@ -140,4 +143,40 @@ border-radius: 12px;
     right: 81px;
     top: 5px;
     z-index: 2;
+}
+
+.guest-menu {
+    width: 318px;
+    /* border-width: solid; */
+    border: 1px solid ;
+    /* border-color: grey; */
+    border-color: #dbdbdb;
+    height: 55px;
+    border-bottom-left-radius: 12px;
+    border-bottom-right-radius: 12px;
+}
+
+
+
+
+.guest-label {
+    top: -28px;
+    background-color: #fff;
+    padding-left: 20px;
+    padding-top: 8px;
+    border-radius: 4px;
+    font-size: 10px;
+    font-weight: bold;
+    font-family: 'Manrope', sans-serif;
+}
+
+.guest-count {
+    font-size: 14px;
+    padding-left: 20px;
+}
+
+.guest-controls {
+    position: absolute;
+    right: 15px;
+    top: 75px;
 }

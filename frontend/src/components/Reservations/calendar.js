@@ -1,28 +1,29 @@
-import React, { useState, useEffect} from "react";
+import React, { useState, useEffect } from "react";
 import { DateRangePicker, isInclusivelyAfterDay } from "react-dates";
-import { useDispatch, useSelector } from "react-redux"
+import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
-import { getListing,fetchListing } from "../../store/listings";
+import { getListing, fetchListing } from "../../store/listings";
 import "react-dates/initialize";
 import "react-dates/lib/css/_datepicker.css";
 import "./calendar.css";
 import dayjs from "dayjs";
 
 const DatePicker = () => {
-  const dispatch = useDispatch()
-  const {listingId} = useParams()
-  const listing = useSelector(getListing(listingId))
+  const dispatch = useDispatch();
+  const { listingId } = useParams();
+  const listing = useSelector(getListing(listingId));
   const [startDate, setStartDate] = useState(null);
   const [endDate, setEndDate] = useState(null);
   const [focusedInput, setFocusedInput] = useState(null);
-  
-  useEffect(()=> {
-    dispatch(fetchListing(listingId))
-  },[listingId])
+  const [guestCount, setGuestCount] = useState(1); // State for guest count
+
+  useEffect(() => {
+    dispatch(fetchListing(listingId));
+  }, [listingId]);
 
   const isOutsideRange = (day) => {
     const today = new Date();
-    return day.isBefore(today); 
+    return day.isBefore(today);
   };
 
   const calculateNumberOfNights = () => {
@@ -36,11 +37,15 @@ const DatePicker = () => {
   };
 
   const totalPrice = () => {
-    return (listing.price * calculateNumberOfNights())
-  }
+    return listing.price * calculateNumberOfNights();
+  };
 
   const handleReserve = () => {
+    // Your reserve logic here
+  };
 
+  const handleGuestCountChange = (newCount) => {
+    setGuestCount(Math.max(1, newCount)); // Ensure guest count is always >= 1
   };
 
   return (
@@ -49,32 +54,42 @@ const DatePicker = () => {
         <span>${listing.price} </span>night
       </div>
       <div className="date-range-picker-wrapper">
-        <div className="check-in-text">
-          CHECK IN
-        </div>
-        <div className="check-out-text">
-          CHECK OUT
-        </div>
-      <DateRangePicker
-        startDate={startDate}
-        startDateId="startDate"
-        endDate={endDate}
-        endDateId="endDate"
-        onDatesChange={({ startDate, endDate }) => {
-          setStartDate(startDate);
-          setEndDate(endDate);
-        }}
-        focusedInput={focusedInput}
-        onFocusChange={(focused) => setFocusedInput(focused)}
-        // showDefaultInputIcon
-        hideKeyboardShortcutsPanel
-        numberOfMonths={2}
-        orientation="horizontal"
-        minimumNights={1}
-        isOutsideRange={isOutsideRange} 
+        <div className="check-in-text">CHECK IN</div>
+        <div className="check-out-text">CHECK OUT</div>
+
+        <DateRangePicker
+          startDate={startDate}
+          startDateId="startDate"
+          endDate={endDate}
+          endDateId="endDate"
+          onDatesChange={({ startDate, endDate }) => {
+            setStartDate(startDate);
+            setEndDate(endDate);
+          }}
+          focusedInput={focusedInput}
+          onFocusChange={(focused) => setFocusedInput(focused)}
+          // showDefaultInputIcon
+          hideKeyboardShortcutsPanel
+          numberOfMonths={2}
+          orientation="horizontal"
+          minimumNights={1}
+          isOutsideRange={isOutsideRange}
         />
-        <div>
-          
+
+        <div className="guest-menu">
+          <div className="guest-container">
+            <div className="guest-label">
+              GUESTS
+            </div>
+            <div className="guest-count">
+              <span>{guestCount}</span> Guests
+
+            </div>
+            <div className="guest-controls">
+              <button onClick={() => handleGuestCountChange(guestCount - 1)}>-</button>
+              <button onClick={() => handleGuestCountChange(guestCount + 1)}>+</button>
+            </div>
+          </div>
         </div>
       </div>
 
@@ -84,11 +99,9 @@ const DatePicker = () => {
       <div className="price-calculation-container">
         <div className="price-calculation">
           ${listing.price} x {calculateNumberOfNights()} nights
-        <span>$ {totalPrice()}</span>
+          <span>$ {totalPrice()}</span>
         </div>
-        <div>
-
-        </div>
+        <div></div>
       </div>
     </div>
   );

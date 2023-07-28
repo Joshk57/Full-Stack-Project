@@ -19,3 +19,22 @@
     margin-top: 14px;
     cursor: pointer;
   }
+
+  .DateRangePickerInput {
+    border-radius: 12px;
+  }
+  .DateInput {
+    border-radius: 12px;
+  }
+
+  #endDate {
+    border-bottom-left-radius: 12px;
+  }
+
+  .CalenderDay {
+    border-color: red;
+  }
+
+  tr td:first-child {
+    background-color: blue;
+  }

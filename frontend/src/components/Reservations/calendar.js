@@ -3,6 +3,7 @@ import { DateRangePicker, isInclusivelyAfterDay } from "react-dates";
 import "react-dates/initialize";
 import "react-dates/lib/css/_datepicker.css";
 import "./calendar.css";
+import dayjs from "dayjs";
 
 const DatePicker = () => {
   const [startDate, setStartDate] = useState(null);
@@ -11,11 +12,12 @@ const DatePicker = () => {
 
   const isOutsideRange = (day) => {
     const today = new Date();
-    return day.toLocaleString() < today.toLocaleString();
+    return day.isBefore(today); 
   };
+
   const handleReserve = () => {
 
-  }
+  };
 
   return (
     <div className="App">
@@ -34,11 +36,12 @@ const DatePicker = () => {
         hideKeyboardShortcutsPanel
         numberOfMonths={2}
         orientation="horizontal"
-        minimumNights={0}
-        isOutsideRange={isOutsideRange}
+        minimumNights={1}
+        isOutsideRange={isOutsideRange} 
       />
-      {/* Add the Reserve button below the DateRangePicker */}
-      <button className="reserve-btn" onClick={handleReserve}>Reserve</button>
+      <button className="reserve-btn" onClick={handleReserve}>
+        Reserve
+      </button>
     </div>
   );
 };

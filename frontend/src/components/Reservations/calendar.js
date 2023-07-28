@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { DateRangePicker, isInclusivelyAfterDay } from "react-dates";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
@@ -16,6 +16,8 @@ const DatePicker = () => {
   const [endDate, setEndDate] = useState(null);
   const [focusedInput, setFocusedInput] = useState(null);
   const [guestCount, setGuestCount] = useState(1); // State for guest count
+  const [isEditingGuestCount, setIsEditingGuestCount] = useState(false); // Track editing mode
+  const guestCountInputRef = useRef(null);
 
   useEffect(() => {
     dispatch(fetchListing(listingId));
@@ -41,11 +43,28 @@ const DatePicker = () => {
   };
 
   const handleReserve = () => {
-    // Your reserve logic here
+
   };
 
   const handleGuestCountChange = (newCount) => {
-    setGuestCount(Math.max(1, newCount)); // Ensure guest count is always >= 1
+    const maxGuests = listing.maxGuests; 
+    const validGuestCount = Math.min(Math.max(1, newCount), maxGuests); 
+    setGuestCount(validGuestCount);
+  };
+
+  const handleGuestCountEdit = () => {
+    setIsEditingGuestCount(true);
+  };
+
+  const handleGuestCountBlur = () => {
+    setIsEditingGuestCount(false);
+  };
+
+  const handleGuestCountInputChange = (event) => {
+    const newCount = parseInt(event.target.value, 10);
+    if (!isNaN(newCount)) {
+      handleGuestCountChange(newCount);
+    }
   };
 
   return (
@@ -78,17 +97,20 @@ const DatePicker = () => {
 
         <div className="guest-menu">
           <div className="guest-container">
-            <div className="guest-label">
-              GUESTS
-            </div>
-            <div className="guest-count">
-              <span>{guestCount}</span> Guests
-
-            </div>
-            <div className="guest-controls">
-              <button onClick={() => handleGuestCountChange(guestCount - 1)}>-</button>
-              <button onClick={() => handleGuestCountChange(guestCount + 1)}>+</button>
-            </div>
+            <div className="guest-label">GUESTS</div>
+            {isEditingGuestCount ? (
+              <input
+                type="number"
+                value={guestCount}
+                onChange={handleGuestCountInputChange}
+                onBlur={handleGuestCountBlur}
+                ref={guestCountInputRef}
+              />
+            ) : (
+              <div className="guest-count" onClick={handleGuestCountEdit}>
+                <span>{guestCount}</span> Guests
+              </div>
+            )}
           </div>
         </div>
       </div>

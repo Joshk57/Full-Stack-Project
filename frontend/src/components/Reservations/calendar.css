@@ -1,40 +1,116 @@
-.DayPicker-Day--selected:not(.DayPicker-Day--outside) {
-    background-color: #007bff; /* Change this to the desired color */
+.calender-container {
+    font-family: 'Manrope', sans-serif;
+}
+.price-night {
+    font-size: 16px;
+    padding-bottom: 24px;
+    width: 286px;
+}
+
+.price-night span {
+    font-weight: bold;
+    font-size: 20px;
+
+}
+
+.price-calculation-container {
+    padding-top: 20px;
+    position: absolute;
+}
+
+.price-calculation-container span {
+    margin-left: 180px;
+}
+
+.reserve-btn {
+background: radial-gradient(#e31c5f, #bd1e59);
+width: 320px;
+height: 48px;
+border-radius: 12px;
+font-weight: bold;
+color: white;
+font-size: 16px;
+border-style: none;
+margin-top: 14px;
+cursor: pointer;
+}
+
+.DateRangePickerInput {
+border-radius: 12px;
+height: 55px;
+}
+
+
+.DateInput {
+border-radius: 12px;
+}
+
+#endDate {
+border-bottom-left-radius: 12px;
+margin-top: 10px;
+padding: none;
+border-width: 0px;
+width: 100px;
+font-size: 14px;
+border-radius: 12px;
+
+
+}
+
+#startDate {
+    /* margin-left: -34px; */
+    margin: none;
+    padding: none;
+    border-width: 0px;
+    margin-top: 10px;
+    width: 100px;
+    font-size: 14px;
+    border-radius: 12px;
+}
+
+#startDate .DateInput_input {
+    margin-left: -24px;
+    margin: none;
+    padding: none;
+    background-color: red;
+}
+
+#endDate .DateInput_input {
+
+}
+
+
+.CalenderDay {
+border-color: red;
+}
+
+.date-range-picker-wrapper {
+    /* Required for positioning the "Check In" and "Check Out" texts */
+    position: relative;
   }
   
-  .app DayPicker-Day--hovered:not(.DayPicker-Day--outside) {
-    background-color: blueviolet; /* Change this to the desired color */
+  .check-in-text,
+  .check-out-text {
+    /* Additional styling for the "Check In" and "Check Out" texts */
+    position: absolute;
+    top: -28px;
+    background-color: #fff;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 10px;
+    font-weight: bold;
   }
-
-  .reserve-btn {
-    background: radial-gradient(#e31c5f, #bd1e59);
-    width: 320px;
-    height: 48px;
-    border-radius: 12px;
-    font-family: 'Manrope', sans-serif;
-    color: white;
-    font-size: 16px;
-    font-weight: 400;
-    border-style: none;
-    margin-top: 14px;
-    cursor: pointer;
+  
+  .check-in-text {
+    /* Position "Check In" text on the left side of the input */
+    left: 14px;
+    top: 5px;
+    z-index: 2;
   }
-
-  .DateRangePickerInput {
-    border-radius: 12px;
-  }
-  .DateInput {
-    border-radius: 12px;
-  }
-
-  #endDate {
-    border-bottom-left-radius: 12px;
-  }
-
-  .CalenderDay {
-    border-color: red;
-  }
-
-  tr td:first-child {
-    background-color: blue;
+  
+  .check-out-text {
+    /* Position "Check Out" text on the right side of the input */
+    right: 81px;
+    top: 5px;
+    z-index: 2;
   }

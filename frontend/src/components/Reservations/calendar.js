@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { DateRangePicker, isInclusivelyAfterDay } from "react-dates";
 import "react-dates/initialize";
 import "react-dates/lib/css/_datepicker.css";
+import "./calendar.css";
 
 const DatePicker = () => {
   const [startDate, setStartDate] = useState(null);
@@ -12,6 +13,9 @@ const DatePicker = () => {
     const today = new Date();
     return day.toLocaleString() < today.toLocaleString();
   };
+  const handleReserve = () => {
+
+  }
 
   return (
     <div className="App">
@@ -33,6 +37,8 @@ const DatePicker = () => {
         minimumNights={0}
         isOutsideRange={isOutsideRange}
       />
+      {/* Add the Reserve button below the DateRangePicker */}
+      <button className="reserve-btn" onClick={handleReserve}>Reserve</button>
     </div>
   );
 };

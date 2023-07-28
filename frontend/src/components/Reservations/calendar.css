@@ -1,0 +1,21 @@
+.DayPicker-Day--selected:not(.DayPicker-Day--outside) {
+    background-color: #007bff; /* Change this to the desired color */
+  }
+  
+  .app DayPicker-Day--hovered:not(.DayPicker-Day--outside) {
+    background-color: blueviolet; /* Change this to the desired color */
+  }
+
+  .reserve-btn {
+    background: radial-gradient(#e31c5f, #bd1e59);
+    width: 320px;
+    height: 48px;
+    border-radius: 12px;
+    font-family: 'Manrope', sans-serif;
+    color: white;
+    font-size: 16px;
+    font-weight: 400;
+    border-style: none;
+    margin-top: 14px;
+    cursor: pointer;
+  }

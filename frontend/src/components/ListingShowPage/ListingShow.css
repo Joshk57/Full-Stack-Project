@@ -131,9 +131,12 @@
     flex-direction: row;
     width: 1400px;
     gap: 50px;
+    padding-top: 40px;
 }
 .listing-body {
     width: 650px;
+    margin-top: -28px;
+    padding-right: 49px;
 }
 .listing-description {
     /* border-top: ; */
@@ -187,10 +190,12 @@
     display: flex;
     position: inherit;
     flex-direction: column;
-    border: 1px solid;
+    border: 1px solid rgb(221, 221, 221);
     border-radius: 12px;
     padding: 24px;
-    width: 300px;
-    height: 423px;
+    width: 320px;
+    height: 440px;
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 6px 16px;
 }
+
 

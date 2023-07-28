@@ -8,6 +8,8 @@ json.extract! @listing, :id, :host_id, :name, :description, :address,
     amenities = @listing.amenities.to_a.map{|amenity| amenity.name}
     json.amenities amenities
 
+    
+
 # json.extract! @listing, :image
 # json.img_url @listing.image.url
 

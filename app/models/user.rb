@@ -28,6 +28,11 @@ class User < ApplicationRecord
         class_name: :Listing,
         dependent: :destroy
 
+    has_many :reservations,
+        foreign_key: :reserver_id,
+        class_name: :Reservation,
+        dependent: :destroy
+
     has_one_attached :image
     
     def self.find_by_credentials(email, password)

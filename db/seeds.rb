@@ -54,7 +54,7 @@ ApplicationRecord.transaction do
       address: "7 ST", 
       city: "Brooklyn", 
       state: "New York", 
-      max_guests: 3,
+      max_guests: 10,
       num_bedrooms: 4, 
       num_beds: 4,
       num_bathrooms: 2, 
@@ -65,7 +65,7 @@ ApplicationRecord.transaction do
       free_parking: true, 
       air_conditioning: true, 
       pool: false,
-      price: 1,
+      price: 10,
       image: "https://a0.muscache.com/im/pictures/miso/Hosting-578897320179146437/original/05928ce6-01ff-4829-bcde-9670e2a03c22.jpeg?im_w=720"
       )
       
@@ -81,7 +81,7 @@ ApplicationRecord.transaction do
       address: "12 ST", 
       city: "Queens", 
       state: "New York", 
-      max_guests: 4,
+      max_guests: 9,
       num_bedrooms: 2,
       num_beds: 3, 
       num_bathrooms: 2, 
@@ -92,7 +92,7 @@ ApplicationRecord.transaction do
       free_parking: true, 
       air_conditioning: true, 
       pool: false,
-      price: 3,
+      price: 20,
       image: "https://a0.muscache.com/im/pictures/miso/Hosting-878958470158600275/original/2d7beb5b-5a37-46c9-90cb-c5b004a62a6e.jpeg?im_w=720"
       )
 
@@ -104,7 +104,7 @@ ApplicationRecord.transaction do
       address: "122 ST", 
       city: "Miami", 
       state: "Florida", 
-      max_guests: 5,
+      max_guests: 8,
       num_bedrooms: 2, 
       num_beds: 4,
       num_bathrooms: 2, 
@@ -115,7 +115,7 @@ ApplicationRecord.transaction do
       free_parking: false, 
       air_conditioning: true, 
       pool: true,
-      price: 10,
+      price: 30,
       image: "https://a0.muscache.com/im/pictures/miso/Hosting-46695796/original/a0965aa5-3907-466e-b727-0900e2a7e8c7.jpeg?im_w=720"
       )
 
@@ -127,7 +127,7 @@ ApplicationRecord.transaction do
       address: "120 ST", 
       city: "Brooklyn", 
       state: "New York", 
-      max_guests: 2,
+      max_guests: 8,
       num_bedrooms: 2, 
       num_beds: 2,
       num_bathrooms: 1, 
@@ -138,7 +138,7 @@ ApplicationRecord.transaction do
       free_parking: true, 
       air_conditioning: true, 
       pool: false,
-      price: 3,
+      price: 40,
       image: "https://a0.muscache.com/im/pictures/d02b6794-2024-491f-a2e3-d8b56e3ef5a4.jpg?im_w=720"
       )
 
@@ -151,7 +151,7 @@ ApplicationRecord.transaction do
       address: "1 ST", 
       city: "Los Angeles", 
       state: "California",
-      max_guests: 3,
+      max_guests: 6,
       num_bedrooms: 4, 
       num_beds: 4,
       num_bathrooms: 3, 
@@ -162,7 +162,7 @@ ApplicationRecord.transaction do
       free_parking: true, 
       air_conditioning: true, 
       pool: true,
-      price: 30,
+      price: 50,
       image: "https://a0.muscache.com/im/pictures/miso/Hosting-671622319399090627/original/37e0ed75-118f-402e-95c7-2c62512acdd5.jpeg?im_w=720"
       )
 
@@ -176,7 +176,7 @@ ApplicationRecord.transaction do
         address: "7 ave", 
         city: "Bronx", 
         state: "New York", 
-        max_guests: 3,
+        max_guests: 9,
         num_bedrooms: 4, 
         num_beds: 4,
         num_bathrooms: 2, 
@@ -187,7 +187,7 @@ ApplicationRecord.transaction do
         free_parking: true, 
         air_conditioning: true, 
         pool: false,
-        price: 1,
+        price: 60,
         image: "https://a0.muscache.com/im/pictures/miso/Hosting-810871681374370809/original/661a54cb-cb27-4f76-994a-3e731925b736.jpeg?im_w=720"
         )
   
@@ -201,7 +201,7 @@ ApplicationRecord.transaction do
         address: "12 AVE", 
         city: "Queens", 
         state: "New York", 
-        max_guests: 4,
+        max_guests: 8,
         num_bedrooms: 2,
         num_beds: 3, 
         num_bathrooms: 2,
@@ -212,7 +212,7 @@ ApplicationRecord.transaction do
         free_parking: true, 
         air_conditioning: true, 
         pool: false,
-        price: 3,
+        price: 70,
         image: "https://a0.muscache.com/im/pictures/71fe4b18-f879-48e4-b2c3-352ebd962259.jpg?im_w=720"
         )
   
@@ -224,7 +224,7 @@ ApplicationRecord.transaction do
         address: "1212 ST", 
         city: "Orlando", 
         state: "Florida", 
-        max_guests: 5,
+        max_guests: 6,
         num_bedrooms: 2, 
         num_beds: 4,
         num_bathrooms: 2, 
@@ -235,7 +235,7 @@ ApplicationRecord.transaction do
         free_parking: true, 
         air_conditioning: true, 
         pool: false,
-        price: 10,
+        price: 80,
         image: "https://a0.muscache.com/im/pictures/9faf7623-c2cb-4e11-be5d-aeb3f4f53935.jpg?im_w=720"
         )
   
@@ -247,7 +247,7 @@ ApplicationRecord.transaction do
         address: "1220 ST", 
         city: "Staten Island", 
         state: "New York", 
-        max_guests: 2,
+        max_guests: 6,
         num_bedrooms: 2, 
         num_beds: 2,
         num_bathrooms: 1, 
@@ -258,7 +258,7 @@ ApplicationRecord.transaction do
         free_parking: true, 
         air_conditioning: true, 
         pool: false,
-        price: 3,
+        price: 90,
         image: "https://a0.muscache.com/im/pictures/miso/Hosting-874099112129683789/original/6a59e77c-43bf-4b68-9730-cfbc7a168179.jpeg?im_w=720"
         )
   
@@ -271,7 +271,7 @@ ApplicationRecord.transaction do
         address: "12222 ST", 
         city: "Los Angeles", 
         state: "California",
-        max_guests: 3,
+        max_guests: 6,
         num_bedrooms: 4, 
         num_beds: 4,
         num_bathrooms: 3, 
@@ -282,7 +282,7 @@ ApplicationRecord.transaction do
         free_parking: true, 
         air_conditioning: true, 
         pool: false,
-        price: 30,
+        price: 100,
         image: "https://a0.muscache.com/im/pictures/aabc73e7-d2ec-4a3e-8cd2-5261fad11fc0.jpg?im_w=720"
         )
         la1_1 = ListingAmenity.create(listing_id: listing1.id, amenity_id: wifi.id)
@@ -297,4 +297,93 @@ ApplicationRecord.transaction do
         la3 = ListingAmenity.create(listing_id: listing3.id, amenity_id: wifi.id)
         la4 = ListingAmenity.create(listing_id: listing4.id, amenity_id: tv.id)
 
+        r1 = Reservation.create(
+          listing_id: listing10.id, 
+          reserver_id: 1, 
+          start_date: Date.new(2023, 8, 12),
+          end_date: Date.new(2023, 8, 14),
+           num_guests: 2, 
+           total_price: 200
+        )
+
+        r2 = Reservation.create(
+          listing_id: listing9.id, 
+          reserver_id: 2, 
+          start_date: Date.new(2023, 9, 12),
+          end_date: Date.new(2023, 9, 13),
+          num_guests: 1, 
+          total_price: 90
+        )
+        r3 = Reservation.create(
+          listing_id: listing8.id, 
+          reserver_id: 3, 
+          start_date: Date.new(2023, 8, 12),
+          end_date: Date.new(2023, 8, 16),
+          num_guests: 4, 
+          total_price: 320
+        )
+
+        r4 = Reservation.create(
+          listing_id: listing8.id, 
+          reserver_id: 4, 
+          start_date: Date.new(2023, 8, 22),
+          end_date: Date.new(2023, 8, 25),
+          num_guests: 3, 
+          total_price: 240
+        )
+
+        r5 = Reservation.create(
+          listing_id: listing5.id, 
+          reserver_id: 5, 
+          start_date: Date.new(2023, 9, 10),
+          end_date: Date.new(2023, 9, 14),
+          num_guests: 4, 
+          total_price: 200
+        )
+
+        r6 = Reservation.create(
+          listing_id: listing4.id, 
+          reserver_id: 12, 
+          start_date: Date.new(2023, 10, 22),
+          end_date: Date.new(2023, 10, 23),
+          num_guests: 1, 
+          total_price: 40
+        )
+
+        r7 = Reservation.create(
+          listing_id: listing2.id, 
+          reserver_id: 7, 
+          start_date: Date.new(2023, 11, 21),
+          end_date: Date.new(2023, 11, 24),
+          num_guests: 3, 
+          total_price: 60
+        )
+
+        r8 = Reservation.create(
+          listing_id: listing7.id, 
+          reserver_id: 8, 
+          start_date: Date.new(2023, 12, 12),
+          end_date: Date.new(2023, 12, 14),
+          num_guests: 2, 
+          total_price: 140
+        )
+
+        r9 = Reservation.create(
+          listing_id: listing3.id, 
+          reserver_id: 6, 
+          start_date: Date.new(2023, 12, 13),
+          end_date: Date.new(2023, 12, 19),
+          num_guests: 6, 
+          total_price: 180
+
+        )
+
+        r10 = Reservation.create(
+          listing_id: listing4.id, 
+          reserver_id: 11, 
+          start_date: Date.new(2023, 9, 15),
+          end_date: Date.new(2023, 9, 17),
+          num_guests: 2, 
+          total_price: 80
+          )
   end

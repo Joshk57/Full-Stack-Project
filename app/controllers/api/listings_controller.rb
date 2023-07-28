@@ -1,7 +1,7 @@
 class Api::ListingsController < ApplicationController
 
     def index
-        @listings = Listing.all.includes(:amenities)
+        @listings = Listing.all.includes(:amenities).includes(:reservations)
         
         render :index
     end

@@ -43,6 +43,11 @@ class Listing < ApplicationRecord
     has_many :amenities,
         through: :listing_amenities
 
+    has_many :reservations,
+        foreign_key: :listing_id,
+        class_name: :Reservation,
+        dependent: :destroy
+
 
     # has_one_attached :image
     has_many_attached :images

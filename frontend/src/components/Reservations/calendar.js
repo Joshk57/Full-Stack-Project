@@ -73,7 +73,10 @@ const DatePicker = () => {
         minimumNights={1}
         isOutsideRange={isOutsideRange} 
         />
-      </div> 
+        <div>
+          
+        </div>
+      </div>
 
       <button className="reserve-btn" onClick={handleReserve}>
         Reserve

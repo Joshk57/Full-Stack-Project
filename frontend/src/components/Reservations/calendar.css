@@ -35,6 +35,7 @@ margin-top: 14px;
 cursor: pointer;
 }
 
+
 .DateRangePickerInput {
 border-radius: 12px;
 height: 55px;
@@ -75,23 +76,49 @@ border-radius: 12px;
     background-color: red;
 }
 
-#endDate .DateInput_input {
+.CalendarDay__selected:hover {
+    background: yellow;
+}
+.CalendarDay__selected, .CalendarDay__selected:active, .CalendarDay__selected:hover {
+    background: black;
+    border: black;
 
 }
 
+.CalendarDay__selected_span {
+    background: black;
+    border: black;
+    opacity: 0.65;
+    color: #fff;
+}
 
-.CalenderDay {
-border-color: red;
+.CalendarDay__selected_span:hover {
+    background: black;
+    border: black;
+    opacity: 0.65;
+    color: #fff;
+}
+
+.CalendarDay__hovered_span, .CalendarDay__hovered_span:hover {
+    background: black;
+    opacity: 0.65;
+    color: #fff;
+    border-color: white;
+}
+
+.CalendarDay__hovered_span {
+    /* background: red */
+}
+.CalendarDay {
+    /* border: none; */
 }
 
 .date-range-picker-wrapper {
-    /* Required for positioning the "Check In" and "Check Out" texts */
     position: relative;
-  }
-  
-  .check-in-text,
-  .check-out-text {
-    /* Additional styling for the "Check In" and "Check Out" texts */
+}
+
+.check-in-text,
+.check-out-text {
     position: absolute;
     top: -28px;
     background-color: #fff;
@@ -99,18 +126,18 @@ border-color: red;
     border-radius: 4px;
     font-size: 10px;
     font-weight: bold;
-  }
+}
   
-  .check-in-text {
-    /* Position "Check In" text on the left side of the input */
+.check-in-text {
+
     left: 14px;
     top: 5px;
     z-index: 2;
-  }
+}
   
-  .check-out-text {
-    /* Position "Check Out" text on the right side of the input */
+.check-out-text {
+
     right: 81px;
     top: 5px;
     z-index: 2;
-  }
+}

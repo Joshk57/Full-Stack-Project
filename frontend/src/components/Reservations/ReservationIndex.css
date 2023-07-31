@@ -8,13 +8,16 @@
 }
 
 .reservation-index-item-container {
-    padding-left: 105px
+    margin-left: 105px
 }
 
 .reservation-trips {
     display: flex;
     align-items: center;
     height: 400px;
+    padding-bottom: 14px;
+    padding-top: 14px;
+    border-bottom: 1px solid;
 }
 
 .reservation-info {

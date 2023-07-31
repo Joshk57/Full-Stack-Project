@@ -52,7 +52,7 @@ export const fetchListing = (listingId) => async dispatch => {
 }
 
 export const fetchListings = () => async dispatch => {
-    const response = await csrfFetch('api/listings')
+    const response = await csrfFetch('/api/listings')
 
     if (response.ok) {
         const listings = await response.json()
@@ -61,7 +61,7 @@ export const fetchListings = () => async dispatch => {
 }
 
 export const createListing = (listing) => async dispatch => {
-    const response = await csrfFetch('api/listings', {
+    const response = await csrfFetch('/api/listings', {
         method: 'POST',
         body: JSON.stringify(listing)
     })
@@ -73,7 +73,7 @@ export const createListing = (listing) => async dispatch => {
 }
 
 export const updateListing = (listing) => async dispatch => {
-    const response = await csrfFetch(`api/listings/${listing.id}`, {
+    const response = await csrfFetch(`/api/listings/${listing.id}`, {
         method: 'PATCH',
         body: JSON.stringify(listing)
     })
@@ -85,7 +85,7 @@ export const updateListing = (listing) => async dispatch => {
 }
 
 export const deleteListing = (listingId) => async dispatch => {
-    const response = await csrfFetch(`api/listings/${listingId}`, {
+    const response = await csrfFetch(`/api/listings/${listingId}`, {
         method: 'DELETE'
     })
     if (response.ok) {

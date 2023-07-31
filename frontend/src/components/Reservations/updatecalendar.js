@@ -12,11 +12,11 @@ import { useHistory } from "react-router-dom";
 
 import { createReservation } from "../../store/reservations";
 
-const DatePicker = () => {
-  const dispatch = useDispatch();
-  const { listingId } = useParams();
+const UpdateDatePicker = ({listing}) => {
+  const dispatch = useDispatch()
   const history = useHistory()
-  const listing = useSelector(getListing(listingId));
+
+
   const [startDate, setStartDate] = useState(null)
   const [endDate, setEndDate] = useState(null);
   const [focusedInput, setFocusedInput] = useState(null);
@@ -27,12 +27,7 @@ const DatePicker = () => {
 
   const [errors, setErrors] = useState([])
 
-  useEffect(() => {
-    dispatch(fetchListing(listingId));
-    // console.log("startDate:", startDate)
-    // console.log("endDate:", endDate);
 
-  }, [dispatch, listingId]);
 
   const isOutsideRange = (day) => {
     const today = new Date();
@@ -55,7 +50,7 @@ const DatePicker = () => {
 
 
   const handleGuestCountChange = (newCount) => {
-    const maxGuests = listing.maxGuests; 
+    const maxGuests = listing.max_guests; 
     const validGuestCount = Math.min(Math.max(1, newCount), maxGuests); 
     setGuestCount(validGuestCount);
   };
@@ -85,32 +80,28 @@ const DatePicker = () => {
       return;
     }
     
-    history.push('/users/reservations')
+    history.push("/users/reservations/")
     const numNights = calculateNumberOfNights()
     const totalPrice = listing.price * numNights
     
     const formData = {
-      listingId: listing.id,
-      startDate: startDate,
-      endDate: endDate,
-      numGuests: guestCount,
-      totalPrice: totalPrice
+        listingId: listing.id,
+        startDate: startDate,
+        endDate: endDate,
+        numGuests: guestCount,
+        totalPrice: totalPrice
     }
     
     // setStartDate("")                  <---------- reset data
     // setEndDate("")
     // setGuestCount(1)
     
-    // console.log(listingId)
-    // console.log("startDate:", startDate)
-    // console.log("endDate:", endDate);
-    // console.log(guestCount)
-    // console.log(reserverId)
-    
+    console.log("maxGuests:", listing.max_guests)
+    console.log(listing.city)
     return dispatch(createReservation({reservation: formData}))
     .catch(async (response) => {
       let data;
-      debugger
+    //   debugger
       try {
         data = await response.clone().json();
       } catch {
@@ -192,4 +183,4 @@ const DatePicker = () => {
   );
 };
 
-export default DatePicker;
+export default UpdateDatePicker;

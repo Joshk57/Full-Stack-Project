@@ -25,26 +25,22 @@ function Navigation(){
 
   return (
 
-    // <ul>
-    //   <li>
-    //     <NavLink exact to="/">Home</NavLink>
-    //     {sessionLinks}
-    //   </li>
-    // </ul>
   
     <div className='nav'>
       <div id='navbar'>
-              <NavLink exact to="/"><img id="logo" src="https://upload.wikimedia.org/wikipedia/commons/6/69/Airbnb_Logo_B%C3%A9lo.svg"/></NavLink>
-              {/* {sessionLinks} */}
+              <NavLink className="app-logo" exact to="/"><img id="logo" src="https://upload.wikimedia.org/wikipedia/commons/6/69/Airbnb_Logo_B%C3%A9lo.svg"></img>
+              
+              <span id="cheapbnb">cheapbnb</span>
+              </NavLink>
       </div>
 
 
-      <ul id="nav-list">
+      <div id="nav-list">
       <input id='searchbar' type="text" placeholder="Search..."></input>
           {/* <br></br><br></br> */}
           <ProfileButton />
           {/* <br></br><br></br> */}
-      </ul>
+      </div>
     </div>
   );
 }

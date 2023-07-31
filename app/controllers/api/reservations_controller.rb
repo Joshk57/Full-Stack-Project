@@ -1,4 +1,5 @@
 class Api::ReservationsController < ApplicationController
+    wrap_parameters include: Reservation.attribute_names 
     def index
         @reservations = Reservation.all
         
@@ -16,18 +17,20 @@ class Api::ReservationsController < ApplicationController
     end
 
     def create
-        
-
+        # debugger
         listing = Listing.find_by(id: reservation_params[:listing_id])
         if listing
             @reservation = Reservation.new(reservation_params)
             @reservation.listing_id = listing.id
-            @reservation.reserver_id = current_user.id
-
-            if @reservation.save
-                render :show
+            if current_user 
+                @reservation.reserver_id = current_user.id
+                if @reservation.save
+                    render :show
+                else
+                    render json: { errors: @reservation.errors.full_messages }, status: :unprocessable_entity
+                end
             else
-                render json: { errors: @amenity.errors.full_messages }, status: :unprocessable_entity
+                render json: { errors: ["You must be logged in to create a reservation"]}, status: :unprocessable_entity
             end
         else
             render json: { errors: ["You can't create a reservation for a listing that does not exist"]}, status: :unprocessable_entity

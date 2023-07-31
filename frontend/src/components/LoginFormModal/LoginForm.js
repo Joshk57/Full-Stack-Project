@@ -5,7 +5,7 @@ import "./LoginForm.css";
 import { login } from "../../store/session";
 
 
-function LoginForm() {
+function LoginForm(props) {
   const dispatch = useDispatch();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -41,7 +41,7 @@ function LoginForm() {
     <div className="loginForm">
       <form onSubmit={handleSubmit}>
         <div className="loginHeader">
-          <span className="close">&times;</span>
+          <span className="close" onClick={() => props.setShowModal(false)}>&times;</span>
           <h2>Log In</h2>
           <hr/>
           <h3>Welcome to Air Bnb</h3>

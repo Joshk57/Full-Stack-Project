@@ -8,6 +8,7 @@
 #
 class ListingAmenity < ApplicationRecord
     validates :amenity, uniqueness: { scope: :listing }
+    
     belongs_to :listing
     belongs_to :amenity
 end

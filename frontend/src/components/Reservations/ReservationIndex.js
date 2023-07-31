@@ -9,38 +9,45 @@ const ReservationIndex = () => {
     const reservations = useSelector(getReservations)
     const currentUser = useSelector(state => state.session.user)
 
-    console.log(reservations)
+    // console.log(reservations)
     useEffect(() => {
         // dispatch(fetchListings())
         dispatch(fetchReservations())
     }, [dispatch])
 
     const sortedReservations = reservations.slice().sort((a,b) => {
-        return new Date(b.startDate) - new Date(a.startDate)
+        return new Date(a.startDate) - new Date(b.startDate)
     })
     // console.log("sortedRes:", sortedReservations)
 
+    // debugger
     return (
-        <div className="reservations-index">
-            <h1>Upcoming Trips</h1>
-            {/* {
-                sortedReservations.map((reservation) => (
-                    <ReservationIndexItem key={reservation.id} reservation={reservation} />
-                ))
-            } */}
+        <>
+        {reservations && (
+            <div className="reservations-index">
+                <h1>Upcoming Trips</h1>
+                {
+                    sortedReservations.map((reservation) => (
+                        <ReservationIndexItem key={reservation.id} reservation={reservation} />
+                    ))
+                }
 
-            {
-                reservations.map((reservation) => <ReservationIndexItem key={reservation.id} reservation={reservation} />)
-            }
-            <h1>Past Trips</h1>
+                {/* {
+                    reservations.map((reservation) => <ReservationIndexItem key={reservation.id} reservation={reservation} />)
+                }  */}
+                <h1>Past Trips</h1>
 
-            {/* {
-                sortedReservations.map((reservation) => (
-                    <ReservationIndexItem key={reservation.id} reservation={reservation} />
-                ))
-            } */}
+                {/* {
+                    sortedReservations.map((reservation) => (
+                        <ReservationIndexItem key={reservation.id} reservation={reservation} />
+                    ))
+                } */}
 
-        </div>
+            </div>
+
+        )}
+
+        </>
     )
 
 

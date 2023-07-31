@@ -18,11 +18,11 @@ function App() {
           <Route path="/" exact>
             <ListingIndex/>
           </Route>
-          <Route path="/reservations/" exact>
+          <Route path="/users/reservations/" exact>
             <ReservationIndex />
           </Route>
-          <Route path="/reservations/1">
-            
+          <Route path="/users/reservations/:reservationId">
+          {/* <Route path="/reservations/1"> */}
             <ReservationUpdatePage/>
           </Route>
         </Switch>

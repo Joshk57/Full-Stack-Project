@@ -77,8 +77,16 @@
     /* position: relative; */
     height: 117px;
     width: 105px;
+    text-decoration: none;
 }
 
+.app-logo {
+    font-family: 'Manrope', sans-serif;
+    font-size: 21px;
+    color: rgb(255 90, 95);
+    text-decoration: none;
+    font-weight: bold;
+}
 .nav {
     border-bottom: 5px solid;
     border-bottom-width: thin;
@@ -141,8 +149,6 @@
     font-size: 15px;
     padding-top: 5px;
 }
-
-
 
 /* 
 #profileBars,

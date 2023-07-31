@@ -52,7 +52,7 @@ export const fetchReservation = (reservationId) => async dispatch => {
 }
 
 export const fetchReservations = () => async dispatch => {
-    const response = await csrfFetch('api/reservations')
+    const response = await csrfFetch('/api/reservations')
 
     if (response.ok) {
         const reservations = await response.json()
@@ -61,7 +61,7 @@ export const fetchReservations = () => async dispatch => {
 }
 
 export const createReservation = (reservation) => async dispatch => {
-    const response = await csrfFetch('api/reservations', {
+    const response = await csrfFetch('/api/reservations', {
         method: 'POST',
         body: JSON.stringify(reservation)
     })
@@ -69,11 +69,11 @@ export const createReservation = (reservation) => async dispatch => {
     if (response.ok) {
         const reservation = await response.json()
         dispatch(receiveReservation(reservation))
-    }
+    } 
 }
 
 export const updateReservation = (reservation) => async dispatch => {
-    const response = await csrfFetch(`api/reservations/${reservation.id}`, {
+    const response = await csrfFetch(`/api/reservations/${reservation.id}`, {
         method: 'PATCH',
         body: JSON.stringify(reservation)
     })
@@ -85,7 +85,7 @@ export const updateReservation = (reservation) => async dispatch => {
 }
 
 export const deleteReservation = (reservationId) => async dispatch => {
-    const response = await csrfFetch(`api/reservations/${reservationId}`, {
+    const response = await csrfFetch(`/api/reservations/${reservationId}`, {
         method: 'DELETE'
     })
     if (response.ok) {
@@ -99,7 +99,7 @@ const reservationsReducer = (state = {}, action) => {
         case RECEIVE_RESERVATION:
             return {...newState, [action.reservation.id]: action.reservation}
         case RECEIVE_RESERVATIONS:
-            return {...action.reservations}
+            return {...newState, ...action.reservations.reservations}
         case REMOVE_RESERVATION:
             delete newState[action.reservationId]
             return newState

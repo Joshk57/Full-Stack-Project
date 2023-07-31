@@ -10,31 +10,32 @@ function LoginForm() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [errors, setErrors] = useState([]);
-
+  
   const loginDemo = (e) => {
     e.stopPropagation()
     e.preventDefault()
     dispatch(login({email: "demo@gmail.com", password: "password"}))
   }
-
+  console.log('test')
   const handleSubmit = (e) => {
     e.preventDefault();
     setErrors([]);
     
     return dispatch(sessionActions.login({ email, password }))
-      .catch(async (res) => {
-        let data;
-        try {
-          data = await res.clone().json();
-        } catch {
-          data = await res.text();
-        }
-        if (data?.errors) setErrors(data.errors);
-        else if (data) setErrors([data]);
-        else setErrors([res.statusText]);
-      });
+    .catch(async (res) => {
+      let data;
+      try {
+        data = await res.clone().json();
+      } catch {
+        data = await res.text();
+      }
+      if (data?.errors) setErrors(data.errors);
+      else if (data) setErrors([data]);
+      else setErrors([res.statusText]);
+    });
   };
-
+  
+  
 
   return (
     <div className="loginForm">

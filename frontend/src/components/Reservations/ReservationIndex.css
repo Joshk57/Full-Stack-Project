@@ -1,0 +1,78 @@
+
+
+.reservations-index {
+    font-family: 'Manrope', sans-serif;
+}
+.reservations-index h1{
+    padding-left: 25px
+}
+
+.reservation-index-item-container {
+    padding-left: 105px
+}
+
+.reservation-trips {
+    display: flex;
+    align-items: center;
+    height: 400px;
+}
+
+.reservation-info {
+    border-radius: 12px;
+    border: 1px solid;
+    width: 500px;
+    height: 100%;
+    text-align: center;
+    margin-left: 40px;
+    font-size: 18px;
+
+}
+#reservation-location {
+    margin-bottom: 8px;
+}
+.reservation-edit {
+    width: 70%;
+    text-align: center;
+    margin: auto;
+    padding-top: 40px;
+
+}
+
+.reservation-host {
+    border-bottom: 1px solid;
+    padding-bottom: 6px;
+}
+
+.reservation-date {
+    padding-top: 16px;
+}
+
+#reservation-change-btn {
+    display: flex;
+    flex-direction: row;
+    font-family: 'Manrope', sans-serif;
+    width: 100%;
+    color: #fff;
+    text-align: center;
+    border: none;
+    border-radius: 8px;
+    padding: 15px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    background: radial-gradient(#e31c5f, #bd1e59);
+    text-decoration: none;
+}
+
+.reservation-pic {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 100%;
+
+}
+
+.reservation-pic img {
+    width: 500px;
+    height: 100%;
+}

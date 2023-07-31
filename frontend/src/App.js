@@ -5,6 +5,7 @@ import Navigation from "./components/Navigation";
 import ListingShow from "./components/ListingShowPage/ListingShow";
 import ListingIndex from "./components/ListingIndexPage/ListingIndex";
 import ReservationIndex from "./components/Reservations/ReservationIndex";
+import ReservationUpdatePage from "./components/Reservations/ReservationUpdatePage";
 function App() {
   return (
     <>
@@ -17,8 +18,12 @@ function App() {
           <Route path="/" exact>
             <ListingIndex/>
           </Route>
-          <Route path="/users/reservations/">
+          <Route path="/reservations/" exact>
             <ReservationIndex />
+          </Route>
+          <Route path="/reservations/1">
+            
+            <ReservationUpdatePage/>
           </Route>
         </Switch>
     </>

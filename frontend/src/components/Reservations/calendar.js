@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
-import { DateRangePicker, isInclusivelyAfterDay } from "react-dates";
+import { DateRangePicker} from "react-dates";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import { getListing, fetchListing } from "../../store/listings";
@@ -7,21 +7,32 @@ import "react-dates/initialize";
 import "react-dates/lib/css/_datepicker.css";
 import "./calendar.css";
 import dayjs from "dayjs";
+// import ReservationIndex from "./ReservationIndex";
+import { useHistory } from "react-router-dom";
+
+import { createReservation } from "../../store/reservations";
 
 const DatePicker = () => {
   const dispatch = useDispatch();
   const { listingId } = useParams();
+  const history = useHistory()
   const listing = useSelector(getListing(listingId));
-  const [startDate, setStartDate] = useState(null);
+  const [startDate, setStartDate] = useState(null)
   const [endDate, setEndDate] = useState(null);
   const [focusedInput, setFocusedInput] = useState(null);
   const [guestCount, setGuestCount] = useState(1); // State for guest count
   const [isEditingGuestCount, setIsEditingGuestCount] = useState(false); // Track editing mode
   const guestCountInputRef = useRef(null);
+  const currentUser = useSelector(state => state.session.user)
+
+  const [errors, setErrors] = useState([])
 
   useEffect(() => {
     dispatch(fetchListing(listingId));
-  }, [listingId]);
+    // console.log("startDate:", startDate)
+    // console.log("endDate:", endDate);
+
+  }, [dispatch, listingId]);
 
   const isOutsideRange = (day) => {
     const today = new Date();
@@ -42,9 +53,6 @@ const DatePicker = () => {
     return listing.price * calculateNumberOfNights();
   };
 
-  const handleReserve = () => {
-
-  };
 
   const handleGuestCountChange = (newCount) => {
     const maxGuests = listing.maxGuests; 
@@ -67,65 +75,115 @@ const DatePicker = () => {
     }
   };
 
+  const handleSubmit = (e) => {
+    e.preventDefault()
+
+    
+    setErrors([])
+    if (!startDate || !endDate || !guestCount) {
+      setErrors(["Fill in all the fields"])
+      return;
+    }
+
+    history.push('/reservations')
+    const numNights = calculateNumberOfNights()
+    const totalPrice = listing.price * numNights
+
+    const formData = {
+      listingId: listing.id,
+      // reserverId: user.id,          <---- fix this when you're able to log in
+      reserverId: 9,
+      startDate: startDate,
+      endDate: endDate,
+      numGuests: guestCount,
+      totalPrice: totalPrice
+    }
+
+    // setStartDate("")                  <---------- reset data
+    // setEndDate("")
+    // setGuestCount(1)
+    // console.log(listingId)
+    // console.log("startDate:", startDate)
+    // console.log("endDate:", endDate);
+    // console.log(guestCount)
+    // console.log(reserverId)
+
+    return dispatch(createReservation(formData))
+      .catch(async (response) => {
+        let data;
+        try {
+          data = await response.clone().json();
+        } catch {
+          data = await response.text();
+        }
+        if (data?.errors) setErrors(data.errors);
+        else if (data) setErrors([data]);
+        else setErrors([response.statusText]);
+      });
+  }
+  
   return (
-    <div className="App">
-      <div className="price-night">
-        <span>${listing.price} </span>night
-      </div>
-      <div className="date-range-picker-wrapper">
-        <div className="check-in-text">CHECK IN</div>
-        <div className="check-out-text">CHECK OUT</div>
+    <form onSubmit={handleSubmit}>
 
-        <DateRangePicker
-          startDate={startDate}
-          startDateId="startDate"
-          endDate={endDate}
-          endDateId="endDate"
-          onDatesChange={({ startDate, endDate }) => {
-            setStartDate(startDate);
-            setEndDate(endDate);
-          }}
-          focusedInput={focusedInput}
-          onFocusChange={(focused) => setFocusedInput(focused)}
-          // showDefaultInputIcon
-          hideKeyboardShortcutsPanel
-          numberOfMonths={2}
-          orientation="horizontal"
-          minimumNights={1}
-          isOutsideRange={isOutsideRange}
-        />
+      <div className="App">
+        <div className="price-night">
+          <span>${listing.price} </span>night
+        </div>
+        <div className="date-range-picker-wrapper">
+          <div className="check-in-text">CHECK IN</div>
+          <div className="check-out-text">CHECK OUT</div>
 
-        <div className="guest-menu">
-          <div className="guest-container">
-            <div className="guest-label">GUESTS</div>
-            {isEditingGuestCount ? (
-              <input
-                type="number"
-                value={guestCount}
-                onChange={handleGuestCountInputChange}
-                onBlur={handleGuestCountBlur}
-                ref={guestCountInputRef}
-              />
-            ) : (
-              <div className="guest-count" onClick={handleGuestCountEdit}>
-                <span>{guestCount}</span> Guests
-              </div>
-            )}
+          <DateRangePicker
+            startDate={startDate}
+            startDateId="startDate"
+            endDate={endDate}
+            endDateId="endDate"
+            onDatesChange={({ startDate, endDate }) => {
+              setStartDate(startDate);
+              setEndDate(endDate);
+            }}
+            focusedInput={focusedInput}
+            onFocusChange={(focused) => setFocusedInput(focused)}
+            // showDefaultInputIcon
+            hideKeyboardShortcutsPanel
+            numberOfMonths={2}
+            orientation="horizontal"
+            minimumNights={1}
+            isOutsideRange={isOutsideRange}
+          />
+
+          <div className="guest-menu">
+            <div className="guest-container">
+              <div className="guest-label">GUESTS</div>
+              {isEditingGuestCount ? (
+                <input
+                  type="number"
+                  value={guestCount}
+                  onChange={handleGuestCountInputChange}
+                  onBlur={handleGuestCountBlur}
+                  ref={guestCountInputRef}
+                />
+              ) : (
+                <div className="guest-count" onClick={handleGuestCountEdit}>
+                  <span>{guestCount}</span> Guests
+                </div>
+              )}
+            </div>
           </div>
         </div>
-      </div>
 
-      <button className="reserve-btn" onClick={handleReserve}>
-        Reserve
-      </button>
-      <div className="price-calculation-container">
-        <div className="price-calculation">
-          ${listing.price} x {calculateNumberOfNights()} nights
-          <span>$ {totalPrice()}</span>
+        <button type="submit" className="reserve-btn">
+          Reserve
+        </button>
+        <div className="price-calculation-container">
+          <div className="price-calculation">
+            ${listing.price} x {calculateNumberOfNights()} nights
+            <span>$ {totalPrice()}</span>
+          </div>
+          <div></div>
         </div>
-        <div></div>
       </div>
-    </div>
+    </form>
   );
 };
 

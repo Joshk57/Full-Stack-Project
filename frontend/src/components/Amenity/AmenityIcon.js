@@ -26,7 +26,6 @@ const AmenityIcon = ({amenity}) => {
     return (
         <>
         
-        {/* {console.log(icons[{amenity}])} */}
         {icons[amenity]}
         <div className="amenity-name">{amenityName[amenity]}</div>
         </>

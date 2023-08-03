@@ -5,6 +5,9 @@ import { deleteReservation, fetchReservation } from "../../store/reservations"
 import { Link } from "react-router-dom"
 import { useParams } from "react-router-dom/cjs/react-router-dom.min"
 import "./ReservationIndex.css"
+import MyMapListingComponent from "../Map/MyMapListing"
+
+
 
 const ReservationIndexItem = (props) => {
     const dispatch = useDispatch()
@@ -14,7 +17,16 @@ const ReservationIndexItem = (props) => {
     // debugger
     // console.log({listingId})
     
-    
+    const formatDateRange = (startDate, endDate) => {
+        const start = new Date(startDate);
+        const end = new Date(endDate);
+      
+        const options = { month: "short", day: "numeric" };
+        const formattedStart = start.toLocaleDateString(undefined, options);
+        const formattedEnd = end.toLocaleDateString(undefined, options);
+      
+        return `${formattedStart} - ${formattedEnd}, ${start.getFullYear()}`;
+      };
     
     const handleClick = () => {
 
@@ -25,12 +37,7 @@ const ReservationIndexItem = (props) => {
 
     // debugger
     return (
-        // <>
-        // <h1>{reservation.startDate}</h1>
-        // <h2>{reservation.listingId}</h2>
-        // <h2>hi</h2>
-        
-        // </>
+
 
         <div className="reservation-index-item-container">
                         <div className="reservation-trips">
@@ -38,25 +45,28 @@ const ReservationIndexItem = (props) => {
                          
                                 <>
                                 <div className="reservation-pic">
-                                    <img src="https://a0.muscache.com/im/pictures/miso/Hosting-578897320179146437/original/05928ce6-01ff-4829-bcde-9670e2a03c22.jpeg?im_w=960"></img>
+                                    <img src={reservation.listing.photoUrls}></img>
             
                                 </div>
                                 <div className="reservation-info">
                                     <h2 id="reservation-location">{reservation.listing.city}, {reservation.listing.state}</h2>
                                     <div className="reservation-host">Cheap Place hosted by </div>
-                                    <div className="reservation-date">{reservation.startDate} - {reservation.endDate}</div>
+                                    <div className="reservation-date">{formatDateRange(reservation.startDate, reservation.endDate)}</div>
                                     <div className="reservation-guests">{reservation.numGuests} Guests</div>
                                     <div className="reservation-price">$ {reservation.totalPrice}</div>
                                     <div className="reservation-edit">
                                         {/* <Link to={`reservations/${reservation.id}`}> */}
-                                        <Link to={`/users/reservations/${reservation.id}`} >
-                                            <button type= "submit" id="reservation-change-btn">Change Reservation</button>
+                                        <Link className="reservation-change-btn" to={{ pathname: `/users/reservations/${reservation.id}`, state: {reservation}}} >
+                                            Change Reservation
                                         </Link>
                                         <br></br>
             
-                                        <button id="reservation-change-btn" onClick={handleClick}>Cancel Reservation</button>
+                                        <button id="reservation-cancel-btn" onClick={handleClick}>Cancel Reservation</button>
                                     </div>
                                 </div>
+                                    <div className="reservation-map">
+                                        <MyMapListingComponent listing={reservation.listing}/>
+                                    </div>
                                 
                                 </>
                           

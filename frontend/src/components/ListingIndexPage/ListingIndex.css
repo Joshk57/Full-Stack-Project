@@ -4,11 +4,10 @@
     flex-wrap: wrap;
     justify-content: center;
     margin-top: 20px;
-    align-items: center;
+    /* align-items: center; */
     max-width: 100%;
-    gap: 5px;
-    padding-left: 50px;
-    padding-right: 20px;
+    gap: 7px;
+    text-decoration: none;
   }
 
   .listing-index-container {
@@ -36,6 +35,79 @@
 
 }
 
+
+
 .listing-info {
-  text-decoration: none;
+  /* text-align: center; */
+
 }
+.listing-location {
+  padding-top: 12px;
+  font-weight: bold;
+  padding-bottom: 2px;
+}
+.listing-name {
+  color: rgb(107, 107, 107);
+  width: 220px;
+  margin: auto;
+  padding-bottom: 4px;
+  font-weight: 400;
+}
+
+.listing-index-link {
+  font-family: 'Manrope', sans-serif;
+  text-decoration: none;
+  text-align: center;
+  color: black;
+  font-size: 14px;
+  padding-top: 5px;
+
+}
+
+.listing-price span {
+  font-weight: bold;
+  padding-bottom: 15px;
+}
+
+.index-map {
+  display: flex;
+  position: fixed;
+  z-index: 2;
+  align-items: center;
+  justify-content: center;
+  bottom: 20px;
+  left: 50%;
+  border-radius: 24px;
+  margin-bottom: 44px;
+  padding: 14px 19px;
+  background: black;
+  height: 47px;
+  width: 140px;
+  border-style: none;
+  border: 5px solid transparent;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  transform: translateX(-50%);
+}
+.index-map:hover {
+  transform: translateX(-50%) scale(1.1); 
+  box-shadow: rgba(0, 0, 0, 0.22) 0px 6px 16px;
+
+}
+.index-map span {
+  font-family: 'Manrope', sans-serif;
+  font-size: 14px;
+  font-weight: bold;
+  color: white;
+  padding-right:;
+  
+}
+
+.index-map i {
+  margin-left: 10px;
+  color: white;
+}
+
+
+
+

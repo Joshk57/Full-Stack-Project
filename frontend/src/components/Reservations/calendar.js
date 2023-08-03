@@ -85,7 +85,7 @@ const DatePicker = () => {
       return;
     }
     
-    history.push('/users/reservations')
+    // history.push('/users/reservations')
     const numNights = calculateNumberOfNights()
     const totalPrice = listing.price * numNights
     
@@ -108,6 +108,12 @@ const DatePicker = () => {
     // console.log(reserverId)
     
     return dispatch(createReservation({reservation: formData}))
+    .then(async (response) => {
+      debugger
+      if (response.ok) {
+        history.push('/users/reservations')
+      }
+    })
     .catch(async (response) => {
       let data;
       debugger

@@ -47,11 +47,23 @@
 
 
 
+.map-container {
+    padding-top: 40px;
+    height: 700px;
+    width: 1120px;
+}
 
+.map-container span {
+    font-weight: bold;
+    font-size: 22px;
+}
 
-
-
-
+.map {
+    padding-top: 22px;
+    /* width: 1120px; */
+    height: 480px;
+    width: 1120px;
+}
 
 .picture-container {
     display: flex;
@@ -150,7 +162,7 @@
     height: 100px;
 }
 .amenities h3{
-    font-size: 20px;
+    font-size: 22px;
     margin-bottom: -20px;
     margin-left: 0px;
 }

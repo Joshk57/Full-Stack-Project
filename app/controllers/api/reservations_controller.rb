@@ -39,6 +39,7 @@ class Api::ReservationsController < ApplicationController
 
 
     def update
+        # debugger
         @reservation = Reservation.find_by(id: params[:id])
         
         if @reservation && @reservation.reserver_id == current_user.id

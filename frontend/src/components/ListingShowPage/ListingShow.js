@@ -7,6 +7,10 @@ import 'react-datepicker/dist/react-datepicker.css';
 import "./ListingShow.css"
 // import DatePicker from "../Reservations/calender"
 import DateRangePicker from "../Reservations/calendar"
+import { hoursToSeconds } from "date-fns"
+// import MyMapComponent from "../Map"
+import MyMapListingComponent from "../Map/MyMapListing"
+
 
 
 const ListingShow = () => {
@@ -31,26 +35,26 @@ const ListingShow = () => {
                 <div className="listing-show">
                     <div className="listing-heading-container">
                         <h1>{listing.name}</h1>
-                        <p>{listing.city}, {listing.state}</p>
+                        <p>{listing.city}, {listing.state}, {listing.country}</p>
                     </div>
 
                     <div className="picture-container">
                         <div className="main-picture">
-                            <img src="https://a0.muscache.com/im/pictures/miso/Hosting-578897320179146437/original/05928ce6-01ff-4829-bcde-9670e2a03c22.jpeg?im_w=960"></img>
+                            <img src={listing.photoUrls[0]}></img>
                         </div>
                         <div className="sub-container">
 
                             <div className="sub-picture">
-                                <img src="https://a0.muscache.com/im/pictures/miso/Hosting-578897320179146437/original/bd30820b-5ce2-40f7-bd81-9b6cfa32be05.jpeg?im_w=720"></img>
+                                <img src={listing.photoUrls[1]}></img>
                             </div>
                             <div className="sub-picture">
-                                <img src="https://a0.muscache.com/im/pictures/miso/Hosting-578897320179146437/original/037b4837-ac41-43a6-8c08-8d97c606fe6d.jpeg?im_w=720"></img>
+                                <img src={listing.photoUrls[2]}></img>
                             </div>
                             <div className="sub-picture">
-                                <img src="https://a0.muscache.com/im/pictures/miso/Hosting-578897320179146437/original/4436c19b-0aea-48b6-8604-081652173c21.jpeg?im_w=720"></img>
+                                <img src={listing.photoUrls[3]}></img>
                             </div>
                             <div className="sub-picture">
-                                <img src="https://a0.muscache.com/im/pictures/miso/Hosting-578897320179146437/original/72872607-cb6f-4740-aeee-04ff04be3646.jpeg?im_w=720"></img>
+                                <img src={listing.photoUrls[4]}></img>
                             </div>
                         </div>
                     </div>
@@ -59,7 +63,7 @@ const ListingShow = () => {
                         <div className="listing-body">
                             <div className="listing-hosted-by">
                                 {/* <p>Placeholder hosted by {host.first_name} {host.last_name}</p> */}
-                                <p> PLACEHOLDER TEXT </p>
+                                <p> Entire rental unit hosted by Paul </p>
                             </div>
                             <div className="listing-details">
                                 <span>{listing.maxGuests} Guests</span>
@@ -80,25 +84,24 @@ const ListingShow = () => {
                                 <h3>What this place offers</h3>
                                 <div className="amenities-container">
                                     {
-                                        listing.amenities.map((amenity) =>
-                                            <div className="amenity-icon" key={amenity}>
+                                        listing.amenities?.map((amenity) =>
+                                            <div className="amenity-icon" key={amenity.id}>
                                                 <AmenityIcon amenity={amenity} />
 
                                             </div>
                                         )
                                     }
                                 </div>
+                                <div className="map-container">
+                                    <span>Where you'll be</span>
+                                    <div className="map">
+                                        <MyMapListingComponent listing={listing} />
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     <div className="calendar-container">
-                        {/* <DatePicker
-                            selected={selectedDate}
-                            onChange={handleDateChange}
-                            minDate={new Date()}
-                        /> */}
-                        {/* <DatePicker/> */}
                         <DateRangePicker/>
-                        
                     </div>
 
                     </div>

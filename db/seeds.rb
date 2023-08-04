@@ -85,7 +85,8 @@ ApplicationRecord.transaction do
       name: "Hawaiian inn Ocean Front Studio Apartment", 
       description: "Are you ready to relax at the beach and sleep staring at the ocean? We have a studio apartment room on the 3rd floor with 2 queen beds, FREE parking for one car, unstable Wi-Fi after hurricane, private access to the beach, microwave, refrigerator, cooktop, beach chairs, coffee machine, smart TV 55''’, and a balcony with ocean view. Pool is CLOSED. The building is currently under CONSTRUCTION due to the hurricanes last year. We work with self-check-in, which is very easy and comfy for our guests.", 
       city: "Daytona Beach Shores", 
-      state: "Florida", 
+      state: "Florida",
+      country: "United States",
       max_guests: 4,
       num_bedrooms: 1, 
       num_beds: 2,
@@ -117,8 +118,9 @@ ApplicationRecord.transaction do
       host_id: 4, 
       name: "Hot Springs Room!", 
       description: "Situated in in the desert 3-4 miles north of town you can definitely relax here! The star-filled sky and waves crashing on shore will comfort you to sleep each night; each Casita has large windows for fantastic views of the ocean,several you can watch the sunrise without getting out of bed! Completely off-grid and eco-friendly we re-use and recycle everything. No crowds and no cars means No noise! the beautiful new Casitas and Glamping tents are just a 3 minute walk to the beach & Hot Springs!",  
-      city: "La Ventana, Baja California Sur", 
-      state: "Mexico",
+      city: "La Ventana", 
+      state: "Baja California Sur",
+      country: "Mexico",
       max_guests: 2,
       num_bedrooms: 1, 
       num_beds: 1,
@@ -434,11 +436,11 @@ ApplicationRecord.transaction do
         la14_3 = ListingAmenity.create(listing_id: listing14.id, amenity_id: free_parking.id)
         la14_4 = ListingAmenity.create(listing_id: listing14.id, amenity_id: pets_allowed.id)
 
-        la15_1 = ListingAmenity.create(listing_id: listing5.id, amenity_id: wifi.id)
-        la15_2 = ListingAmenity.create(listing_id: listing5.id, amenity_id: kitchen.id)
-        la15_3 = ListingAmenity.create(listing_id: listing5.id, amenity_id: air_conditioning.id)
-        la15_4 = ListingAmenity.create(listing_id: listing5.id, amenity_id: tv.id)
-        la15_5 = ListingAmenity.create(listing_id: listing5.id, amenity_id: free_parking.id)
+        la15_1 = ListingAmenity.create(listing_id: listing15.id, amenity_id: wifi.id)
+        la15_2 = ListingAmenity.create(listing_id: listing15.id, amenity_id: kitchen.id)
+        la15_3 = ListingAmenity.create(listing_id: listing15.id, amenity_id: air_conditioning.id)
+        la15_4 = ListingAmenity.create(listing_id: listing15.id, amenity_id: tv.id)
+        la15_5 = ListingAmenity.create(listing_id: listing15.id, amenity_id: free_parking.id)
 
         # r1 = Reservation.create(
         #   listing_id: listing10.id, 

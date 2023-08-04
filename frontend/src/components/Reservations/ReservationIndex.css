@@ -36,11 +36,13 @@
 }
 .reservation-edit {
     width: 70%;
+    /* width: 20px; */
     text-align: center;
     margin: auto;
     padding-top: 40px;
     text-decoration: none;
-
+    justify-content: center;
+    align-items: center;
 }
 
 .reservation-host {
@@ -52,32 +54,12 @@
     padding-top: 16px;
 }
 
-#reservation-change-btn {
-    display: flex;
-    flex-direction: row;
-    font-family: 'Manrope', sans-serif;
-    width: 100%;
-    color: #fff;
-    text-align: center;
-    border: none;
-    border-radius: 8px;
-    padding: 15px;
-    font-size: 16px;
-    font-weight: 600;
-    cursor: pointer;
-    background: radial-gradient(#e31c5f, #bd1e59);
-    text-decoration: none;
-
-}
-
 .reservation-change-btn {
-    align-items: center;
     display: flex;
     flex-direction: row;
     font-family: 'Manrope', sans-serif;
     width: 100%;
     color: #fff;
-    text-align: center;
     border: none;
     border-radius: 8px;
     padding: 15px;
@@ -86,7 +68,7 @@
     cursor: pointer;
     background: radial-gradient(#e31c5f, #bd1e59);
     text-decoration: none;
-
+    justify-content: center;
 }
 
 .reservation-change-btn {
@@ -103,6 +85,10 @@
 .reservation-pic img {
     width: 500px;
     height: 100%;
+}
+
+.reservations-update-container {
+    font-family: 'Manrope', sans-serif;
 }
 
 .reservations-update-container h2{

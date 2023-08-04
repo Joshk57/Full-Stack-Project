@@ -31,3 +31,5 @@
 .byebug_history
 
 /public
+
+.env.development.local

@@ -37,6 +37,8 @@ const renderApplication = () => {
     </React.StrictMode>,
     document.getElementById('root')
   );
+  // ReactDOM.createRoot(document.getElementById("root")).render(<Root />)
+  
 }
 
 if (

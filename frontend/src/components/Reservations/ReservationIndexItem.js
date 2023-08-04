@@ -45,12 +45,12 @@ const ReservationIndexItem = (props) => {
                          
                                 <>
                                 <div className="reservation-pic">
-                                    <img src={reservation.listing.photoUrls}></img>
+                                    <img src={reservation.photoUrls}></img>
             
                                 </div>
                                 <div className="reservation-info">
                                     <h2 id="reservation-location">{reservation.listing.city}, {reservation.listing.state}</h2>
-                                    <div className="reservation-host">Cheap Place hosted by </div>
+                                    <div className="reservation-host">Entire rental unit</div>
                                     <div className="reservation-date">{formatDateRange(reservation.startDate, reservation.endDate)}</div>
                                     <div className="reservation-guests">{reservation.numGuests} Guests</div>
                                     <div className="reservation-price">$ {reservation.totalPrice}</div>
@@ -61,7 +61,7 @@ const ReservationIndexItem = (props) => {
                                         </Link>
                                         <br></br>
             
-                                        <button id="reservation-cancel-btn" onClick={handleClick}>Cancel Reservation</button>
+                                        <div className="reservation-change-btn" onClick={handleClick}>Cancel Reservation</div>
                                     </div>
                                 </div>
                                     <div className="reservation-map">

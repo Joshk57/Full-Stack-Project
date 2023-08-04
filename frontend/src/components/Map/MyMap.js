@@ -48,9 +48,13 @@ import React from 'react';
 import { GoogleMap, InfoWindow, OverlayView, useJsApiLoader } from '@react-google-maps/api';
 import { useHistory } from 'react-router-dom';
 import { useState } from 'react';
+import "./PriceBubbleMarker.css"
+
 const MyMapComponent = ({ listings }) => {
 
   const history = useHistory();
+  const [hoveredMarkerId, setHoveredMarkerId] = useState(null);
+
   const containerStyle = {
     width: '100%',
     height: '100vh',
@@ -58,7 +62,7 @@ const MyMapComponent = ({ listings }) => {
 
   const { isLoaded } = useJsApiLoader({
     id: 'google-map-script',
-    googleMapsApiKey: 'AIzaSyARaJd3oqki95QufDSafd0JWEXaVL_zMiw', // Replace with your API key
+    googleMapsApiKey: process.env.REACT_APP_MAPS_API_KEY 
   });
 
   const center = {
@@ -75,12 +79,16 @@ const MyMapComponent = ({ listings }) => {
     y: -(height / 2),
   });
 
-  const [hoveredMarkerId, setHoveredMarkerId] = useState(null);
 
 
 
   const handleMarkerMouseEnter = (listingId) => {
-    setHoveredMarkerId(listingId);
+
+    return (e) => {
+      e.preventDefault()
+      setHoveredMarkerId(listingId);
+
+    }
   };
 
   const handleMarkerMouseLeave = () => {
@@ -88,7 +96,7 @@ const MyMapComponent = ({ listings }) => {
   };
 
   return isLoaded ? (
-    <GoogleMap mapContainerStyle={containerStyle} center={center} zoom={2.7}>
+    <GoogleMap mapContainerStyle={containerStyle} center={center} zoom={2.7} draggable={false}>
       {listings.map((listing) => (
         <>
         
@@ -97,10 +105,12 @@ const MyMapComponent = ({ listings }) => {
           position={{ lat: listing.latitude, lng: listing.longitude }}
           mapPaneName={OverlayView.OVERLAY_MOUSE_TARGET}
           // getPixelPositionOffset={getPixelPositionOffset}
+
         >
           <div
+            className="overlay-marker"
             onClick={() => handleMarkerClick(listing.id)}
-            onMouseEnter={() => handleMarkerMouseEnter(listing.id)}
+            // onMouseEnter={() => handleMarkerMouseEnter(listing.id)}
             onMouseLeave={handleMarkerMouseLeave}
             style={{
               // background: 'white',
@@ -116,8 +126,8 @@ const MyMapComponent = ({ listings }) => {
               height: '9px',
               cursor: 'pointer',
               // transform: hoveredMarkerId === listing.id ? 'scale(1.1)' : 'scale(1)',
-              background: hoveredMarkerId === listing.id ? 'black' : 'white',
-              color: hoveredMarkerId === listing.id ? 'white' : 'black',
+              // background: hoveredMarkerId === listing.id ? 'black' : 'white',
+              // color: hoveredMarkerId === listing.id ? 'white' : 'black',
               transition: 'transform 0.3s ease',
             }}
           >

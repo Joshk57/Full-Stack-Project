@@ -15,3 +15,19 @@
     height: 40px;
   }
   
+  .price-bubble-marker:hover {
+    background: black;
+  }
+
+.overlay-marker:hover {
+  background-color: black;
+  transform: scale(1.1);
+  border: 5px solid black;
+  color: white
+
+}
+
+.overlay-marker {
+  background-color: white;
+  color: black;
+}

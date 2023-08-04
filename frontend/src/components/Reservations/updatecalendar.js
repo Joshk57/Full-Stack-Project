@@ -213,7 +213,10 @@ const UpdateDatePicker = ({listing, reservation, updateReservationData}) => {
             ${listing.price} x {calculateNumberOfNights()} nights
             <span>$ {totalPrice()}</span>
           </div>
-          <div></div>
+          <div className="total-price">
+            Total Price
+            <span>$ {totalPrice()}</span>
+          </div>
         </div>
       </div>
     </form>

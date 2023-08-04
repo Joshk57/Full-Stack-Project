@@ -21,8 +21,14 @@ const ListingShow = () => {
 
     // const host = useSelector((state) => Object.values(state.host).find((host) => host.id === listing.hostId))
 
-
-
+    // const hostSelector = (state) => {
+    //     if (listing) {
+    //       const id = listing.hostId;
+    //       const listingHost = state.hosts[id];
+    //       return listingHost;
+    //     }
+    //   };
+    //   const host = useSelector(hostSelector);
     useEffect(() => {
         dispatch(fetchListing(listingId))
     }, [listingId])

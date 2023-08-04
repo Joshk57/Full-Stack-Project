@@ -26,6 +26,7 @@ function ProfileButton({ user }) {
     // debugger
     if (!showMenu) return;
     const closeMenu = () => {
+      if (showMenu)
       setShowMenu(false);
     };
 
@@ -49,6 +50,7 @@ function ProfileButton({ user }) {
   // debugger
 return (
   <>
+  
         <button className="profileMenu" onClick={openMenu}>
           <div className="profileContainer">
             <div className="profileIcon">
@@ -60,14 +62,15 @@ return (
 
           </div>
         </button>
+
     {!currentUser && (
       <>
 
         {showMenu && (
-          <div onClick={(e) => e.stopPropagation()}>
+          <div>
           <ul className="profile-dropdown">
              
-            <div>
+            <div> 
               <LoginFormModal/>
               <SignupFormModal />
             </div>
@@ -85,8 +88,8 @@ return (
           <div onClick={(e) => e.stopPropagation()}>
           <ul className="profile-dropdown">
              
-            <button id="modalBtn" onClick={() => history.push("/users/reservations/")}>My Trips</button>
-            <button id="modalBtn" onClick={logout}>Log Out</button>
+            <button className="modalBtn" onClick={() => history.push("/users/reservations/")}>My Trips</button>
+            <button className="modalBtn" onClick={logout}>Log Out</button>
 
           </ul>
           </div>

@@ -46,6 +46,18 @@ class Api::ListingsController < ApplicationController
         end
     end
 
+    def search
+        query = params[:query]
+        # price = params[:price]
+        @listings = Listing
+        .where('name ILIKE ? OR country ILIKE ?', "%#{query}%", "%#{query}%")
+        # .where('name ILIKE ?', "%#{query}%")
+
+        #http://localhost:5000/api/listings/search?query=      <---- search like this
+
+        render :search
+    end
+
     private
 
     def listing_params

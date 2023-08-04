@@ -16,8 +16,7 @@ const MyMapListingComponent = ({listing}) => {
     };
     const { isLoaded } = useJsApiLoader({
         id: 'google-map-script',
-        // googleMapsApiKey: process.env.REACT_APP_MAPS_API_KEY
-        googleMapsApiKey: "AIzaSyARaJd3oqki95QufDSafd0JWEXaVL_zMiw"
+        googleMapsApiKey: process.env.REACT_APP_MAPS_API_KEY
     })
 
   const [map, setMap] = useState(null)

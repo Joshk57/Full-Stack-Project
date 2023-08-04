@@ -6,17 +6,24 @@ import ListingShow from "./components/ListingShowPage/ListingShow";
 import ListingIndex from "./components/ListingIndexPage/ListingIndex";
 import ReservationIndex from "./components/Reservations/ReservationIndex";
 import ReservationUpdatePage from "./components/Reservations/ReservationUpdatePage";
+import SearchShowPage from "./components/SearchShowPage/SearchShowPage";
+
 function App() {
   return (
     <>
       <Navigation />
         <Switch>
-          <Route path="/listings/:listingId" exact>
-
-            <ListingShow/>  
-          </Route>
           <Route path="/" exact>
             <ListingIndex/>
+          </Route>
+          <Route path="/search">
+            {/* <ListingIndex/> */}
+            <SearchShowPage/>
+
+          </Route>
+          <Route path="/listings/:listingId" >
+
+            <ListingShow/>  
           </Route>
           <Route path="/users/reservations/" exact>
             <ReservationIndex />

@@ -10,6 +10,9 @@ Budgetbnb is a clone of Airbnb in which users can rent places to stay for a reas
 
 <h1>Location</h1>
 Users can click on the "Show map" button in the splash page which provides the user all the searched listings in a map with a price marker on the listing. The user can zoom in and out of the map to click on a specific listing which will lead them to the listing show page.
+<br></br>
+<img width="1257" alt="Screenshot 2023-08-04 144530" src="https://github.com/Joshk57/Full-Stack-Project/assets/126521511/890d100d-a577-4926-8137-a88b184154d2">
+<h2>Code Snippet</h2>
 
 ```
 const MyMapComponent = ({ listings }) => {
@@ -104,8 +107,11 @@ const MyMapComponent = ({ listings }) => {
 <h1>Reservations</h1>
 
 Users are able to make reservations on the listing's show page by providing a check-in date, check-out date, and the number of guests on the calendar form. Then in the reservations index page, if users want to change a reservation, then can click change reservation which will lead them to a reservation edit page where they can re-enter their desired days and number of guests.
+<br></br>
+<img width="1206" alt="Screenshot 2023-08-04 144801" src="https://github.com/Joshk57/Full-Stack-Project/assets/126521511/eb0fabcc-ac40-44a9-bd3a-7426de3e7a65">
+<img width="301" alt="Screenshot 2023-08-04 144814" src="https://github.com/Joshk57/Full-Stack-Project/assets/126521511/34614b31-54e6-4924-af6b-eea894424525">
 
-<h3>Updating Reservation</h3>
+<h3>Code Snippet</h3>
 
 ```
 const UpdateDatePicker = ({listing, reservation, updateReservationData}) => {
@@ -277,6 +283,7 @@ const UpdateDatePicker = ({listing, reservation, updateReservationData}) => {
 ```
 
 <h1>Future Implementations</h1>
+
 * Rating and reviews with CRUD functions
 * Providing categories and more search capabilities
 * CRUD functions for listings

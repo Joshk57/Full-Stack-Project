@@ -12,7 +12,7 @@ Budgetbnb is a clone of Airbnb in which users can rent places to stay for a reas
 Users can click on the "Show map" button in the splash page which provides the user all the searched listings in a map with a price marker on the listing. The user can zoom in and out of the map to click on a specific listing which will lead them to the listing show page.
 <br></br>
 <img width="1257" alt="Screenshot 2023-08-04 144530" src="https://github.com/Joshk57/Full-Stack-Project/assets/126521511/890d100d-a577-4926-8137-a88b184154d2">
-<h2>Code Snippet</h2>
+<h3>Code Snippet</h3>
 
 ```
 const MyMapComponent = ({ listings }) => {

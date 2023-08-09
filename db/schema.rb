@@ -69,8 +69,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_01_201831) do
     t.datetime "updated_at", null: false
     t.integer "max_guests", default: 1, null: false
     t.integer "num_beds", default: 1, null: false
-    t.float "latitude", null: false
-    t.float "longitude", null: false
+    t.float "longitude"
+    t.float "latitude"
     t.string "country"
     t.index ["city"], name: "index_listings_on_city"
     t.index ["host_id"], name: "index_listings_on_host_id"

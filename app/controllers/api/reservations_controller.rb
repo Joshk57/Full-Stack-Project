@@ -17,7 +17,7 @@ class Api::ReservationsController < ApplicationController
     end
 
     def create
-        # debugger
+
         listing = Listing.find_by(id: reservation_params[:listing_id])
         if listing
             @reservation = Reservation.new(reservation_params)
@@ -39,7 +39,7 @@ class Api::ReservationsController < ApplicationController
 
 
     def update
-        # debugger
+        
         @reservation = Reservation.find_by(id: params[:id])
         
         if @reservation && @reservation.reserver_id == current_user.id

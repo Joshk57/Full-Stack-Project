@@ -16,7 +16,7 @@ function LoginForm(props) {
     e.preventDefault()
     dispatch(login({email: "demo@gmail.com", password: "password"}))
   }
-  console.log('test')
+
   const handleSubmit = (e) => {
     e.preventDefault();
     setErrors([]);

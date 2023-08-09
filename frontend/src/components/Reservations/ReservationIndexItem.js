@@ -14,8 +14,6 @@ const ReservationIndexItem = (props) => {
     const reservation = props.reservation
     // const listing = useSelector(getListing(reservation.listingId))
 
-    // debugger
-    // console.log({listingId})
     
     const formatDateRange = (startDate, endDate) => {
         const start = new Date(startDate);
@@ -35,7 +33,7 @@ const ReservationIndexItem = (props) => {
     }
 
 
-    // debugger
+
     return (
 
 

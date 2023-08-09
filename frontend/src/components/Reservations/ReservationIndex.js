@@ -9,7 +9,6 @@ const ReservationIndex = () => {
     const reservations = useSelector(getReservations)
     const currentUser = useSelector(state => state.session.user)
 
-    // console.log(reservations)
     useEffect(() => {
         // dispatch(fetchListings())
         dispatch(fetchReservations())
@@ -18,9 +17,7 @@ const ReservationIndex = () => {
     const sortedReservations = reservations.slice().sort((a,b) => {
         return new Date(a.startDate) - new Date(b.startDate)
     })
-    // console.log("sortedRes:", sortedReservations)
 
-    // debugger
     return (
         <>
         {reservations && (

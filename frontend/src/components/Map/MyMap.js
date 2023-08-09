@@ -104,16 +104,14 @@ const MyMapComponent = ({ listings }) => {
           key={listing.id}
           position={{ lat: listing.latitude, lng: listing.longitude }}
           mapPaneName={OverlayView.OVERLAY_MOUSE_TARGET}
-          // getPixelPositionOffset={getPixelPositionOffset}
+          getPixelPositionOffset={getPixelPositionOffset}
 
         >
           <div
             className="overlay-marker"
             onClick={() => handleMarkerClick(listing.id)}
-            // onMouseEnter={() => handleMarkerMouseEnter(listing.id)}
             onMouseLeave={handleMarkerMouseLeave}
             style={{
-              // background: 'white',
               borderRadius: '24px',
               padding: '10px',
               boxShadow: '0 2px 6px rgba(0, 0, 0, 0.3)',
@@ -125,13 +123,9 @@ const MyMapComponent = ({ listings }) => {
               width: '27px',
               height: '9px',
               cursor: 'pointer',
-              // transform: hoveredMarkerId === listing.id ? 'scale(1.1)' : 'scale(1)',
-              // background: hoveredMarkerId === listing.id ? 'black' : 'white',
-              // color: hoveredMarkerId === listing.id ? 'white' : 'black',
               transition: 'transform 0.3s ease',
             }}
           >
-
             ${listing.price}
           </div>
         </OverlayView>

@@ -1,4 +1,4 @@
-# debugger
+
 
 json.extract! @listing, :id, :host_id, :name, :description, :city, :state, 
     :country, :max_guests, :num_bedrooms, :num_beds, :num_bathrooms,

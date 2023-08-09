@@ -44,7 +44,7 @@ export const getListings = (state) => {
 
 export const fetchListing = (listingId) => async dispatch => {
     const response = await csrfFetch(`/api/listings/${listingId}`)
-    // debugger
+
     if (response.ok) {
         const listing = await response.json()
         dispatch(receiveListing(listing))

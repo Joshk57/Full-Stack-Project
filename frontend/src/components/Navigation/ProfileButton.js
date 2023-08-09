@@ -15,7 +15,6 @@ function ProfileButton({ user }) {
 
   const history = useHistory()
   const openMenu = (e) => {
-    // debugger
     e.stopPropagation()
     if (showMenu) return;
     setShowMenu(true);
@@ -23,7 +22,6 @@ function ProfileButton({ user }) {
 
 
   useEffect(() => {
-    // debugger
     if (!showMenu) return;
     const closeMenu = () => {
       if (showMenu)
@@ -47,7 +45,7 @@ function ProfileButton({ user }) {
     setShowMenu(false)
   }
 
-  // debugger
+
 return (
   <>
   

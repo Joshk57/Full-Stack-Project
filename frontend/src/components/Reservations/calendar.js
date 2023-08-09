@@ -29,8 +29,7 @@ const DatePicker = () => {
 
   useEffect(() => {
     dispatch(fetchListing(listingId));
-    // console.log("startDate:", startDate)
-    // console.log("endDate:", endDate);
+
 
   }, [dispatch, listingId]);
 
@@ -101,22 +100,16 @@ const DatePicker = () => {
     // setEndDate("")
     // setGuestCount(1)
     
-    // console.log(listingId)
-    // console.log("startDate:", startDate)
-    // console.log("endDate:", endDate);
-    // console.log(guestCount)
-    // console.log(reserverId)
+ 
     
     return dispatch(createReservation({reservation: formData}))
     .then(async (response) => {
-      debugger
       if (response.ok) {
         history.push('/users/reservations')
       }
     })
     .catch(async (response) => {
       let data;
-      debugger
       try {
         data = await response.clone().json();
       } catch {

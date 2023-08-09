@@ -7,10 +7,7 @@ import "react-dates/initialize";
 import "react-dates/lib/css/_datepicker.css";
 import "./calendar.css";
 import dayjs from "dayjs";
-// import ReservationIndex from "./ReservationIndex";
 import { useHistory } from "react-router-dom";
-
-// import { createReservation } from "../../store/reservations";
 import { deleteReservation, updateReservation } from "../../store/reservations";
 
 const UpdateDatePicker = ({listing, reservation, updateReservationData}) => {
@@ -20,9 +17,6 @@ const UpdateDatePicker = ({listing, reservation, updateReservationData}) => {
   const [startDate, setStartDate] = useState(null);
   const [endDate, setEndDate] = useState(null);
   const [guestCount, setGuestCount] = useState(reservation.numGuests || 1);
-  // const [startDate, setStartDate] = useState(null)
-  // const [endDate, setEndDate] = useState(null);
-  // const [guestCount, setGuestCount] = useState(1); // State for guest count
   const [focusedInput, setFocusedInput] = useState(null);
   const [isEditingGuestCount, setIsEditingGuestCount] = useState(false); // Track editing mode
   const guestCountInputRef = useRef(null);
@@ -96,31 +90,10 @@ const UpdateDatePicker = ({listing, reservation, updateReservationData}) => {
       totalPrice: totalPrice
     }
     
-    // setStartDate("")                  <---------- reset data
-    // setEndDate("")
-    // setGuestCount(1)
-    
-    // console.log("maxGuests:", listing.max_guests)
-    // console.log(listing.city)
-    // return dispatch(createReservation({reservation: formData}))
-    // .catch(async (response) => {
-    //   let data;
-    // //   debugger
-    // try {
-    //   data = await response.clone().json();
-    // } catch {
-    //   data = await response.text();
-    // }
-    // if (data?.errors) setErrors(data.errors);
-    // else if (data) {
-    //   setErrors([data]);
-    // }
-    // else setErrors([response.statusText]);
-    // });
+
     return dispatch(updateReservation({reservation: formData}))
     .catch(async (response) => {
       let data;
-    //   debugger
     try {
       data = await response.clone().json();
     } catch {
@@ -132,23 +105,6 @@ const UpdateDatePicker = ({listing, reservation, updateReservationData}) => {
     }
     else setErrors([response.statusText]);
     });
-
-    // return dispatch(updateReservation({reservation: formData}))
-    // .then(() => {
-
-    //   updateReservationData(formData);
-    // })
-    // .catch((response) => {
-    //   if (response?.status === 400) {
-    //     response.json().then((data) => {
-    //       setErrors(data.message); 
-    //     });
-    //   } else {
-    //     setErrors("An error occurred. Please try again later."); 
-    //   }
-    // });
-
-
   }
 
 
@@ -174,7 +130,6 @@ const UpdateDatePicker = ({listing, reservation, updateReservationData}) => {
             }}
             focusedInput={focusedInput}
             onFocusChange={(focused) => setFocusedInput(focused)}
-            // showDefaultInputIcon
             hideKeyboardShortcutsPanel
             numberOfMonths={2}
             orientation="horizontal"

@@ -80,7 +80,7 @@ ApplicationRecord.transaction do
       )
       #https://www.airbnb.com/rooms/846928799399158467?adults=1&category_tag=Tag%3A8535&children=0&enable_m3_private_room=true&infants=0&pets=0&check_in=2023-08-06&check_out=2023-08-11&source_impression_id=p3_1690903117_1GQx0Jzks1R4frwx&previous_page_section_name=1000&federated_search_id=3f24848b-13c5-45c3-abb2-8948debf917a
       listings << listing2
-      listing3 = Listing.create!(
+    listing3 = Listing.create!(
       host_id: 3, 
       name: "Hawaiian inn Ocean Front Studio Apartment", 
       description: "Are you ready to relax at the beach and sleep staring at the ocean? We have a studio apartment room on the 3rd floor with 2 queen beds, FREE parking for one car, unstable Wi-Fi after hurricane, private access to the beach, microwave, refrigerator, cooktop, beach chairs, coffee machine, smart TV 55''’, and a balcony with ocean view. Pool is CLOSED. The building is currently under CONSTRUCTION due to the hurricanes last year. We work with self-check-in, which is very easy and comfy for our guests.", 
@@ -97,7 +97,7 @@ ApplicationRecord.transaction do
       )
       #https://www.airbnb.com/rooms/48802278?adults=1&category_tag=Tag%3A8536&children=0&enable_m3_private_room=true&infants=0&pets=0&search_mode=flex_destinations_search&check_in=2023-08-06&check_out=2023-08-12&source_impression_id=p3_1690920578_8l%2BpZ0aLgIOspzG8&previous_page_section_name=1000&federated_search_id=77ea0292-f43c-4d5c-a4ae-82c5049b5855
       listings << listing3
-      listing4 = Listing.create!(
+    listing4 = Listing.create!(
       host_id: 2, 
       name: "New Modern Lake and Mountain View Cabin.", 
       description: "Brand new bright lake and mountain view 1 bedroom cabin with stunning view which functions as a home. The view is truly incredible as other guests can attest to. Recently, described by a guest as the best Air B and B they have stayed at. The cabins are modern and stylish. They are tucked up on the mountain side: a scenic 10 minute drive from Nelson, 20 mins to White Water ski resort rd. . Enjoy golf, fishing all the beauty, adventure and amenities the Kootenay’s have to offer.", 
@@ -114,7 +114,7 @@ ApplicationRecord.transaction do
       )
       #https://www.airbnb.com/rooms/40265001?adults=1&category_tag=Tag%3A8536&children=0&enable_m3_private_room=true&infants=0&pets=0&search_mode=flex_destinations_search&check_in=2023-09-10&check_out=2023-09-15&source_impression_id=p3_1690920921_o34PovyGZUqBlnBF&previous_page_section_name=1000&federated_search_id=e5ade49b-073f-4704-a5b6-22bb228b5312
       listings << listing4
-      listing5 = Listing.create!(
+    listing5 = Listing.create!(
       host_id: 4, 
       name: "Hot Springs Room!", 
       description: "Situated in in the desert 3-4 miles north of town you can definitely relax here! The star-filled sky and waves crashing on shore will comfort you to sleep each night; each Casita has large windows for fantastic views of the ocean,several you can watch the sunrise without getting out of bed! Completely off-grid and eco-friendly we re-use and recycle everything. No crowds and no cars means No noise! the beautiful new Casitas and Glamping tents are just a 3 minute walk to the beach & Hot Springs!",  
@@ -132,7 +132,7 @@ ApplicationRecord.transaction do
       #https://www.airbnb.com/rooms/30070795?adults=1&category_tag=Tag%3A8536&children=0&enable_m3_private_room=true&infants=0&pets=0&search_mode=flex_destinations_search&check_in=2023-11-01&check_out=2023-11-06&source_impression_id=p3_1690922366_HDQhWDVnF5PgW649&previous_page_section_name=1000&federated_search_id=38c8f09a-bdc4-4c22-bdaf-2132a10257eb
       listings << listing5
 
-      listing6 = Listing.create!(
+    listing6 = Listing.create!(
         host_id: 1, 
         name: "Breezy Studio In Seogwipo #2.7", 
         description: "Breezy Studio is located at the beautiful south coast of Jeju Island overlooking 'Seogeondo' Island and 'Beomseom' Island.
@@ -187,7 +187,7 @@ ApplicationRecord.transaction do
         #https://www.airbnb.com/rooms/720056184889526588?adults=1&category_tag=Tag%3A8536&children=0&enable_m3_private_room=true&infants=0&pets=0&search_mode=flex_destinations_search&check_in=2023-09-13&check_out=2023-09-19&source_impression_id=p3_1690923509_x2G%2BAGcaID30ztq%2B&previous_page_section_name=1000&federated_search_id=de40eda0-81f2-41b0-bfeb-8d33f32c3542
         listings << listing7
 
-        listing8 = Listing.create!(
+      listing8 = Listing.create!(
         host_id: 3, 
         name: "Bright & cozy apartment in Alfama", 
         description: "When you arrive you will find a friendly and cozy apartment, set in a completely refurbished building, where you will feel the atmosphere and the environment to be accommodated in one of the most typical neighborhoods of Lisbon.
@@ -208,7 +208,7 @@ ApplicationRecord.transaction do
         #https://www.airbnb.com/rooms/487394?adults=1&category_tag=Tag%3A8535&children=0&enable_m3_private_room=true&infants=0&pets=0&check_in=2024-01-04&check_out=2024-01-10&source_impression_id=p3_1690924193_ZSj8fJGNldlnWQc8&previous_page_section_name=1000&federated_search_id=ec039359-f8d7-46f2-9f68-b91485facb9e
         listings << listing8
 
-        listing9 = Listing.create!(
+      listing9 = Listing.create!(
         host_id: 2, 
         name: "Central 1bedroom apt by the sea", 
         description: "Central lookated apartment in the city of Rhodes , just across the beach.
@@ -231,7 +231,7 @@ ApplicationRecord.transaction do
         #https://www.airbnb.com/rooms/11449473?adults=1&category_tag=Tag%3A7769&children=0&enable_m3_private_room=true&infants=0&pets=0&check_in=2023-11-15&check_out=2023-11-20&source_impression_id=p3_1690925076_xQWFVaAnVjzcJCLC&previous_page_section_name=1000&federated_search_id=b2cd7451-0869-4ba6-a7b1-09a12bb462c5
         listings << listing9
 
-        listing10 = Listing.create!(
+      listing10 = Listing.create!(
         host_id: 4, 
         name: "Exceptional City Flat with a Private Balcony", 
         description: "Decorated in shades of grey, black, and white, this chic home provides a stylish and inviting ambiance. The decor is elevated by the natural wood textures with splashes of color and original contemporary artworks accenting every space.
@@ -263,7 +263,7 @@ ApplicationRecord.transaction do
         listings << listing10
 
         
-        listing11 = Listing.create!(
+      listing11 = Listing.create!(
         host_id: 5, 
         name: "Loft da Árvore, facing the sea with access to the beach", 
         description: "TREE LOFT (LOFT 13)
@@ -282,7 +282,7 @@ ApplicationRecord.transaction do
         #https://www.airbnb.com/rooms/49613871?adults=1&category_tag=Tag%3A789&children=0&enable_m3_private_room=true&infants=0&pets=0&check_in=2023-08-02&check_out=2023-08-07&source_impression_id=p3_1690980963_7NfELf6ffpjlU41u&previous_page_section_name=1000&federated_search_id=3d329fcd-1318-4fe5-b2d2-c86c31641f28
         listings << listing11
 
-        listing12 = Listing.create!(
+      listing12 = Listing.create!(
           host_id: 3, 
           name: "Big Palermo", 
           description: "Welcome to our charming and cozy apartment in the heart of Palermo, one of the most vibrant neighborhoods in Buenos Aires. Here you will find the perfect location to enjoy the city's top bars and restaurants, just a few steps away.", 
@@ -300,7 +300,8 @@ ApplicationRecord.transaction do
           #https://www.airbnb.com/rooms/918171400746510733?adults=1&category_tag=Tag%3A8535&children=0&enable_m3_private_room=true&infants=0&pets=0&check_in=2023-08-14&check_out=2023-08-21&source_impression_id=p3_1690981705_p%2FAA0umhlbt13zfj&previous_page_section_name=1000&federated_search_id=f86c3f3f-d690-4822-88df-1e49dd600d54
       
           listings << listing12
-          listing13 = Listing.create!(
+
+        listing13 = Listing.create!(
             host_id: 5, 
             name: 'Kumano Nakahechi "MINE-no-Yado" Mine own house', 
             description: '"MINE-no-Yado" Mine own house is a small Japanese style cottage in Mine village where includes Takijiri-oji, the entrance to the sacred mountains of Kumano.
@@ -539,14 +540,16 @@ ApplicationRecord.transaction do
         #       filename: "#{category}_#{index+1}.jpg")
         #   end
         # end
-      end
-      listings.each_with_index do |listing, i|
-        listing.photos.attach([
-          { io: URI.open("https://my-fsp-seeds.s3.amazonaws.com/listing#{i + 1}_#{1}.webp"), filename: "listing#{i + 1}_#{1}.webp" },
-          { io: URI.open("https://my-fsp-seeds.s3.amazonaws.com/listing#{i + 1}_#{2}.webp"), filename: "listing#{i + 1}_#{2}.webp" },
-          { io: URI.open("https://my-fsp-seeds.s3.amazonaws.com/listing#{i + 1}_#{3}.webp"), filename: "listing#{i + 1}_#{3}.webp" },
-          { io: URI.open("https://my-fsp-seeds.s3.amazonaws.com/listing#{i + 1}_#{4}.webp"), filename: "listing#{i + 1}_#{4}.webp" },
-          { io: URI.open("https://my-fsp-seeds.s3.amazonaws.com/listing#{i + 1}_#{5}.webp"), filename: "listing#{i + 1}_#{5}.webp" }
-        ])
-        puts "https://my-fsp-seeds.s3.amazonaws.com/listing#{i + 1}_#{1}.webp"
-      end
+      # end
+    end
+    listings.each_with_index do |listing, i|
+      puts listing
+      listing.photos.attach([
+        { io: URI.open("https://my-fsp-seeds.s3.amazonaws.com/listing#{i + 1}_#{1}.webp"), filename: "listing#{i + 1}_#{1}.webp" },
+        { io: URI.open("https://my-fsp-seeds.s3.amazonaws.com/listing#{i + 1}_#{2}.webp"), filename: "listing#{i + 1}_#{2}.webp" },
+        { io: URI.open("https://my-fsp-seeds.s3.amazonaws.com/listing#{i + 1}_#{3}.webp"), filename: "listing#{i + 1}_#{3}.webp" },
+        { io: URI.open("https://my-fsp-seeds.s3.amazonaws.com/listing#{i + 1}_#{4}.webp"), filename: "listing#{i + 1}_#{4}.webp" },
+        { io: URI.open("https://my-fsp-seeds.s3.amazonaws.com/listing#{i + 1}_#{5}.webp"), filename: "listing#{i + 1}_#{5}.webp" }
+      ])
+      puts "https://my-fsp-seeds.s3.amazonaws.com/listing#{i + 1}_#{1}.webp"
+    end

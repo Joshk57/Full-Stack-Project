@@ -106,10 +106,10 @@ const ListingShow = () => {
                                 </div>
                             </div>
                         </div>
+
                     <div className="calendar-container">
                         <DateRangePicker/>
                     </div>
-
                     </div>
                 </div>
             )}

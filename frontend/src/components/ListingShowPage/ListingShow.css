@@ -4,7 +4,7 @@
     flex-direction: column;
     /* padding-left: 270px; */
     /* align-self: center; */
-    align-items: center;
+    /* align-items: center; */
     font-family: 'Manrope', sans-serif;
     /* max-width: 1420px; */
     /* max-width: 550vw; */
@@ -17,7 +17,7 @@
     font-weight: 400px;
     font-size: 15px;
     margin-left: 0;
-    align-items: left;
+    align-items: start;
     
 }
 
@@ -153,6 +153,7 @@
 .listing-body-container {
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     /* width: 1400px; */
     width: 70vw;
     gap: 50px;
@@ -214,14 +215,14 @@
 .calendar-container {
     display: flex;
     position: inherit;
-    flex-direction: row;
+    /* flex-direction: row; */
     border: 1px solid rgb(221, 221, 221);
     border-radius: 12px;
     padding: 24px;
-    height: 52vh;
+    /* height: 52vh; */
     box-shadow: rgba(0, 0, 0, 0.12) 0px 6px 16px;
     /* width: 320px; */
-    /* height: 440px; */
+    height: 440px;
+
+    
 }
-
-

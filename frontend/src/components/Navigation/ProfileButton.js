@@ -40,11 +40,13 @@ function ProfileButton({ user }) {
     history.push("/")
   };
 
-  const handeLoginFormModal = () => {
+  const handleLoginFormModal = () => {
     <LoginFormModal/>
     setShowMenu(false)
   }
-
+  const closeMenuOnClick = () => {
+    setShowMenu(false);
+  };
 
 return (
   <>
@@ -70,7 +72,7 @@ return (
              
             <div> 
               <LoginFormModal/>
-              <SignupFormModal />
+              <SignupFormModal/>
             </div>
         
           </ul>

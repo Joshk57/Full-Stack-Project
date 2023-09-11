@@ -9,9 +9,12 @@ function LoginFormModal() {
     <>
       <button className="modalBtn" onClick={(e) => {e.stopPropagation(); setShowModal(true)}}>Log In</button>
       {showModal && (
+        <div>
+
         <Modal onClose={() => setShowModal(false)}>
           <LoginForm showModal={showModal} setShowModal={setShowModal}/>
         </Modal>
+        </div>
         // <h1>Hello</h1>
       )}
     </>

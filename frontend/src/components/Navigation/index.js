@@ -96,13 +96,13 @@ function Navigation() {
           <SearchBar />
         </div>
         <div>
-          <a href='https://www.linkedin.com/in/joshua-kim-jk/'><img id="linkedin"
+          <a href='https://www.linkedin.com/in/joshua-kim-jk/' target='_blank'><img id="linkedin"
           src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png"/>
 
           </a>
         </div>
         <div>
-        <a href="https://github.com/Joshk57/Full-Stack-Project"><img id="myGithub" 
+        <a href="https://github.com/Joshk57/Full-Stack-Project" target='_blank'><img id="myGithub" 
         src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Octicons-mark-github.svg/900px-Octicons-mark-github.svg.png?20180806170715"/>
       </a>
         </div>

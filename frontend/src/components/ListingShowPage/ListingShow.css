@@ -14,7 +14,8 @@
 
 .listing-heading-container {
     font-family: 'Manrope', sans-serif;
-    font-weight: 400px;
+    font-weight: 400;
+    /* font-size: 0.878vw; */
     font-size: 15px;
     margin-left: 0;
     align-items: start;
@@ -22,6 +23,7 @@
 }
 
 .listing-heading-container p {
+    /* font-size: 0.878vw; */
     font-size: 15px;
     margin-top: 0px;
     margin-bottom: 0px;
@@ -30,50 +32,58 @@
 }
 
 .listing-heading-container h1 {
-    margin-top: 15px;
-    margin-bottom: 10px;
+    margin-top: 0.87vw;
+    margin-bottom: 0.58vw;
 }
 
 .listing-hosted-by p {
-    font-size: 22px;    
+    /* font-size: 1.288vw;     */
+    font-size: 22px;
     /* font-weight: 400; */
     font-weight: bold;
     margin-bottom: 3px;
 }
 .listing-description {
-    margin-top: 6px;
+    margin-top: 0.35vw;
+    /* font-size: 0.937vw; */
+    font-size: 16px;
 }
 
 .listing-details {
     border-bottom: 2px solid;
     border-color: rgb(202, 202, 202);
-    padding-bottom: 5px;
+    padding-bottom: 0.29vw;
+    /* font-size: 0.93vw; */
+    font-size: 16px;
 }
 
 
 
 .map-container {
-    padding-top: 40px;
+    /* padding-top: 40px; */
+    /* padding-top: 2.34vw; */
     /* height: 700px;
     width: 1120px; */
-    height: 57vh;
+
+    height: 41vw;
     width: 65.5vw;
  
 }
 
 .map-container span {
     font-weight: bold;
+    /* font-size: 1.288vw; */
     font-size: 22px;
 }
 
 .map {
-    padding-top: 22px;
+    padding-top: 1.28vw;
     /* width: 1120px; */
     /* height: 480px; */
     /* width: 1120px; */
     height: 100%;
     width: 100%;
-    padding-bottom: 80px;
+    padding-bottom: 4.68vw;
 }
 
 .picture-container {
@@ -155,21 +165,31 @@
 
 
 
-
 .listing-body-container {
     display: flex;
     flex-direction: row;
     /* flex-wrap: wrap; */
     /* width: 1400px; */
-    width: 70vw;
+    width: 65.5vw;
+    height: 100%;
+    /* height: 26vw; */
     gap: 2.93vw;
-    padding-top: 40px;
+    padding-top: 2.34vw;
+    margin-bottom: 1.45vw;
 }
+/* @media screen and (width >= 1960px) {
+    .listing-body-container {
+        height: 45vw;
+    }
+} */
 .listing-body {
     /* width: 650px; */
+    /* display: inline-block; */
     width: 38vw;
-    margin-top: -28px;
-    padding-right: 49px;
+    margin-top: -1.64vw;
+    padding-right: 2.87vw;
+    
+
 }
 .listing-description {
     /* border-top: ; */
@@ -177,14 +197,15 @@
     border-color: rgb(202, 202, 202);
 }
 
-.amenities {
+/* .amenities {
     font-weight: 200;
     font-family: 'Manrope', sans-serif;
-    height: 100px;
-}
-.amenities h3{
+    height: 7.85vw;
+} */
+#amenities-h3{
+    /* font-size: 1.288vw; */
     font-size: 22px;
-    margin-bottom: -20px;
+    margin-bottom: -1.17vw;
     margin-left: 0px;
 }
 .amenities-container {
@@ -197,11 +218,11 @@
 
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    grid-gap: 16px;
+    grid-gap: 0.93vw;
     grid-auto-flow: row;
     border-bottom: 2px solid;
     border-color: rgb(202, 202, 202);
-    padding: 48px;
+    padding: 2.81vw;
     padding-left: 0px;
     
 }
@@ -213,8 +234,9 @@
 }
 
 .amenity-name {
-    padding-left: 10px;
+    padding-left: 0.585vw;
     font-weight: 400;
+    /* font-size: 0.937vw; */
     font-size: 16px;
 }
 
@@ -230,6 +252,5 @@
     box-shadow: rgba(0, 0, 0, 0.12) 0px 6px 16px;
     /* width: 320px; */
     height: 440px;
-
     
 }

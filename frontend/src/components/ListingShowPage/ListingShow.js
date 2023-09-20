@@ -86,8 +86,8 @@ const ListingShow = () => {
                                 <span>{listing.description}</span>
                                 <br></br><br></br>
                             </div>
-                            <div className="amenities">
-                                <h3>What this place offers</h3>
+                            {/* <div className="amenities"> */}
+                                <h3 id='amenities-h3'>What this place offers</h3>
                                 <div className="amenities-container">
                                     {
                                         listing.amenities?.map((amenity) =>
@@ -98,18 +98,18 @@ const ListingShow = () => {
                                         )
                                     }
                                 </div>
-                                <div className="map-container">
-                                    <span>Where you'll be</span>
-                                    <div className="map">
-                                        <MyMapListingComponent listing={listing} />
-                                    </div>
-                                </div>
-                            </div>
+                            {/* </div> */}
                         </div>
 
                     <div className="calendar-container">
                         <DateRangePicker/>
                     </div>
+                    </div>
+                    <div className="map-container">
+                        <span>Where you'll be</span>
+                        <div className="map">
+                            <MyMapListingComponent listing={listing} />
+                        </div>
                     </div>
                 </div>
             )}

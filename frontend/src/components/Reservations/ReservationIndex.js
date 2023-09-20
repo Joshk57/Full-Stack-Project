@@ -32,7 +32,7 @@ const ReservationIndex = () => {
                 {/* {
                     reservations.map((reservation) => <ReservationIndexItem key={reservation.id} reservation={reservation} />)
                 }  */}
-                <h1>Past Trips</h1>
+                {/* <h1>Past Trips</h1> */}
 
                 {/* {
                     sortedReservations.map((reservation) => (

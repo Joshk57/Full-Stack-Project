@@ -145,14 +145,14 @@ border-radius: 12px;
 
     left: 14px;
     top: 5px;
-    z-index: 2;
+    z-index: 1;
 }
   
 .check-out-text {
 
     right: 81px;
     top: 5px;
-    z-index: 2;
+    z-index: 1;
 }
 
 .guest-menu {

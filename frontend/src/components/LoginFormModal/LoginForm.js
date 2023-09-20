@@ -1,16 +1,17 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import * as sessionActions from "../../store/session";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import "./LoginForm.css";
 import { login } from "../../store/session";
 
 
-function LoginForm(props) {
+function LoginForm({closeModal}) {
   const dispatch = useDispatch();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [errors, setErrors] = useState([]);
-  
+  const currentUser = useSelector(state => state.session.user)
+
   const loginDemo = (e) => {
     e.stopPropagation()
     e.preventDefault()
@@ -18,6 +19,7 @@ function LoginForm(props) {
   }
 
   const handleSubmit = (e) => {
+    e.stopPropagation();
     e.preventDefault();
     setErrors([]);
     
@@ -35,13 +37,18 @@ function LoginForm(props) {
     });
   };
   
+  useEffect(()=> {
+    if (currentUser) {
+      closeModal()
+    }
+  }, [currentUser])
   
 
   return (
     <div className="loginForm">
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} onClick={(e) => e.stopPropagation()}>
         <div className="loginHeader">
-          <span className="close" onClick={() => props.setShowModal(false)}>&times;</span>
+          <span className="close" onClick={closeModal}>&times;</span>
           <h2>Log In</h2>
           <hr/>
           <h3>Welcome to Air Bnb</h3>
@@ -50,7 +57,7 @@ function LoginForm(props) {
         <ul>
           {errors.map(error => <li key={error}>{error}</li>)}
         </ul>
-        <label>
+        <label onClick={(e) => e.stopPropagation()}>
           Email
           <input
             type="text"
@@ -60,7 +67,7 @@ function LoginForm(props) {
           />
         </label>
         <br/>
-        <label>
+        <label onClick={(e) => e.stopPropagation()}>
           Password
           <input
             type="password"

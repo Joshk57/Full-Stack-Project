@@ -19,7 +19,7 @@ const receiveReviews = (reviews) => {
     }
 } 
 
-const removeReviews = (reviewId) => {
+const removeReview = (reviewId) => {
     return {
         type: REMOVE_REVIEW,
         reviewId

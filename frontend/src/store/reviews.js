@@ -2,7 +2,7 @@ import csrfFetch from "./csrf";
 
 export const RECEIVE_REVIEW = 'reviews/receiveReview'
 export const RECEIVE_REVIEWS = 'reviews/receiveReviews'
-export const REMOVE_REVIEWS = 'reviews/removeReviews'
+export const REMOVE_REVIEW = 'reviews/removeReview'
 
 
 const receiveReview = (review) => {
@@ -39,5 +39,23 @@ export const getReviews = (state) => {
         return Object.values(state.reviews)
     } else {
         return []
+    }
+}
+
+export const fetchReview = (reviewId) => async dispatch => {
+    const response = await csrfFetch(`/api/reviews/${reviewId}`)
+    
+    if (response.ok) {
+        const review = await response.json()
+        dispatch(receiveReview(review))
+    }
+}
+
+export const fetchReviews = () => async dispatch => {
+    const response = await csrfFetch('/api/reviews')
+
+    if (response.ok) {
+        const reviews = await response.json()
+        dispatch(receiveReviews(reviews))
     }
 }

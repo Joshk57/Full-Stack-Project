@@ -22,6 +22,8 @@ class ApplicationController < ActionController::API
     #     render json: ['No current user']
     #   end
     # end
+
+    # adding a note to see if commit works
   
     def current_user
       @current_user ||= User.find_by(session_token: session[:session_token])

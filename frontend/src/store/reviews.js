@@ -59,3 +59,56 @@ export const fetchReviews = () => async dispatch => {
         dispatch(receiveReviews(reviews))
     }
 }
+
+export const createReview = (review) => async dispatch => {
+    const response = await csrfFetch('/api/reviews', {
+        method: 'POST',
+        body: JSON.stringify(review)
+    })
+
+    if (response.ok) {
+        const reservation = await response.json()
+        dispatch(receiveReview(reservation))
+    } 
+    return response
+}
+
+// check if update review is correct
+export const updateReview = (review) => async dispatch => {
+
+    const response = await csrfFetch(`/api/reviews/${review.id}`, {
+        method: 'PATCH',
+        body: JSON.stringify(review)
+    })
+
+    if (response.ok) {
+        const review = await response.json()
+        dispatch(receiveReview(review))
+    }
+}
+
+export const deleteReview = (reviewId) => async dispatch => {
+    const response = await csrfFetch(`/api/reviews/${reviewId}`, {
+        method: 'DELETE'
+    })
+    if (response.ok) {
+        dispatch(removeReview(reviewId))
+    }
+}
+
+const reviewsReducer = (state = {}, action) => {
+    let newState = {...state}
+    switch (action.type) {
+        case RECEIVE_REVIEW:
+            return {...newState, [action.reservation.id]: action.reservation}
+        case RECEIVE_REVIEWS:
+            return {...newState, ...action.reviews}
+        case REMOVE_REVIEW:
+            delete newState[action.reviewId]
+            return newState
+        default:
+            return state
+    }
+}
+
+export default reviewsReducer

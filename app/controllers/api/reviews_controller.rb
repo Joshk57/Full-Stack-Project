@@ -14,7 +14,18 @@ class Api::ReviewsController < ApplicationController
     end
 
     def create
-
+        @review = 
     end
-    
+
+    def update
+    end
+
+    def destroy
+    end
+
+    private
+    def review_params
+        params.require(:review).permit()
+    end
+
 end

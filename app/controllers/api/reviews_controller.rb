@@ -27,11 +27,15 @@ class Api::ReviewsController < ApplicationController
         else
             render json: { errors: @review.errors.full_messages }, status: :unprocessable_entity
         end
-        
+
 
     end
 
     def destroy
+        @review = Review.find_by(id: params[:id])
+        if @review
+            @listing.destroy
+        end
     end
 
     private

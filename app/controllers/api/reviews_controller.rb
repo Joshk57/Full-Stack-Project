@@ -31,6 +31,7 @@ class Api::ReviewsController < ApplicationController
 
     end
 
+    #check if correct
     def destroy
         @review = Review.find_by(id: params[:id])
         if @review
@@ -39,6 +40,7 @@ class Api::ReviewsController < ApplicationController
     end
 
     private
+    #finish review params 
     def review_params
         params.require(:review).permit()
     end
